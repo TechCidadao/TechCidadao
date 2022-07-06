@@ -25,6 +25,11 @@ const GlobalStyle = createGlobalStyle`
 
         --button-blue:#066ba4;
         --button-white:#7D7D7D;
+
+        --black:#000000;
+        --white:#ffffff;
+        --background:#364462;
+        --background-input:#D9D9D9;
     }
 
 `;
