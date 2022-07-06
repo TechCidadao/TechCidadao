@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const ContainerMain = styled.div`
   background-color: white;
-  height: 100vh;
   margin-top: 40px;
 
   .foot {
@@ -36,24 +35,31 @@ export const ContainerBtn = styled.div`
     width: 90%;
   }
 
-  section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
   @media (min-width: 800px) {
     flex-direction: row;
     margin-top: 80px;
     align-items: flex-start;
     justify-content: space-around;
-    section {
-      align-items: flex-start;
-      width: 30%;
-    }
 
     h1 {
       width: 90%;
     }
+  }
+`;
+
+export const SectionBtn = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+
+  @media (min-width: 600px) {
+    align-items: flex-start;
+    width: 70%;
+    padding: 10px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 30%;
   }
 `;

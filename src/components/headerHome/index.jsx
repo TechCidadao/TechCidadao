@@ -7,7 +7,7 @@ export const HeaderHome = () => {
   return (
     <>
       <TopHeaderHome />
-      <HomeHeaderArrowContainer BgColor="#1a02a1f2" transitionColor="#365DA7">
+      <HomeHeaderArrowContainer BgColor="#1c07a2;" transitionColor="#365DA7">
         <HomeHeaderDownArrow />
       </HomeHeaderArrowContainer>
       <HeaderMidArrow />

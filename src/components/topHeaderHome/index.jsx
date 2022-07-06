@@ -1,8 +1,8 @@
-import { HomeHeaderBox, BoxImg } from "./style";
+import { HomeHeaderBox, BoxImg, ContainerArrow } from "./style";
 import Logo from "../../assets/Logo.svg";
 import bgHeader from "../../assets/bgHeader.png";
 import { Button } from "../button";
-
+import ArrowAcessibilidade from "../../assets/ArrowAcessibilidade.svg";
 export const TopHeaderHome = () => {
   return (
     <HomeHeaderBox>
@@ -15,10 +15,18 @@ export const TopHeaderHome = () => {
       <section>
         <Button
           title="Acessibilidade"
-          width="90%"
           BgColor="#ffff"
           color="#365DA7"
+          hoverColor={"#92c5d7"}
+          width={"100%"}
         />
+        <ContainerArrow>
+          <img
+            src={ArrowAcessibilidade}
+            alt="imagem de flecha apontando para o texto abaixo do botão"
+          />
+          <h1>Aperte aqui para escolher sua acessibilidade</h1>
+        </ContainerArrow>
       </section>
     </HomeHeaderBox>
   );

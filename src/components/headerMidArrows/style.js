@@ -13,10 +13,13 @@ export const MidArrowContainer = styled.div.attrs((props) => ({
     letter-spacing: 2px;
     text-shadow: 4px 3px 4px rgb(41 35 35);
   }
+  p {
+    color: wheat;
+    font-weight: 500;
+    font-size: 20px;
+  }
 
   @media (min-width: 600px) {
-    height: 30vh;
-
     h1 {
       font-size: 30px;
       width: 90%;

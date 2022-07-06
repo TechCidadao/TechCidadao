@@ -4,27 +4,36 @@ export const GlobalButton = styled.button.attrs((props) => ({
   color: props.color,
   BgColor: props.BgColor,
   width: props.width,
+  hoverColor: props.hoverColor,
 }))`
   color: ${(props) => props.color};
   background-color: ${(props) => props.BgColor};
   width: ${(props) => props.width};
   border: none;
   box-shadow: 2px 6px 2px -1px #0000005c;
-  padding: 12px;
+  padding: 20px;
   border-radius: 8px;
-  height: 9vh;
-  font-weight: 900;
+  height: 12vh;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
+  font-size: 35px;
   gap: 15px;
+  font-family: "Poppins";
+  font-weight: 600;
+  text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+
   img {
     width: 40px;
   }
 
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: ${(props) => props.hoverColor};
+  }
+
   @media (min-width: 600px) {
-    padding: 40px;
-    width: 100%;
   }
 `;

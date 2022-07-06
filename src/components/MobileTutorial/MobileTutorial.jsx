@@ -38,16 +38,11 @@ export const MobileTutorial = () => {
     <Container>
       <Header>Header</Header>
       <HeaderSecondary>
-        <StyledTypographyTitle
-          variant="h1"
-          id="title"
-        >
+        <StyledTypographyTitle variant="h1" id="title">
           Sobre Celulares:
         </StyledTypographyTitle>
         <Div>
-          <Text id="elem2">
-            Aperte aqui para escolher a sua acessibilidade
-          </Text>
+          <Text id="elem2">Aperte aqui para escolher a sua acessibilidade</Text>
           <AccessBtn id="elem1" variant="contained">
             Acessibilidade
             <ImageBtn src={imgButtonAccess} />

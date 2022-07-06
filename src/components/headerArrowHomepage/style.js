@@ -5,6 +5,7 @@ export const HomeHeaderArrowContainer = styled.div.attrs((props) => ({
   shape: props.shape,
   transitionColor: props.transitionColor,
 }))`
+  border: none;
   .custom-shape-divider-top-1657030231 {
     top: 0;
     left: 0;
@@ -15,6 +16,7 @@ export const HomeHeaderArrowContainer = styled.div.attrs((props) => ({
   }
 
   .custom-shape-divider-top-1657030231 svg {
+    height: 100%;
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
@@ -24,5 +26,6 @@ export const HomeHeaderArrowContainer = styled.div.attrs((props) => ({
 
   .custom-shape-divider-top-1657030231 .shape-fill {
     fill: ${(props) => props.BgColor};
+    filter: drop-shadow(2px 4px 6px black);
   }
 `;

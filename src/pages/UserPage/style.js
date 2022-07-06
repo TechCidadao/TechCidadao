@@ -20,25 +20,16 @@ export const ContainerMid = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 30px 0px 40px 0px;
+
   @media (min-width: 1024px) {
     display: flex;
     justify-content: flex-end;
     align-content: flex-end;
-    flex-direction: row-reverse;
-    margin: 35px 0px;
+    flex-direction: column;
   }
 `;
-export const ButtonAcessibility = styled.button`
-  width: 95%;
-  height: 97px;
-  font-size: 35px;
-  font-weight: 600;
-  margin-top: 35px;
-  cursor: pointer;
-  @media (min-width: 1024px) {
-    margin: 0px;
-  }
-`;
+
 export const SubtitleBtnAcessibility = styled.div`
   width: 70%;
   display: flex;
@@ -53,7 +44,6 @@ export const SubtitleBtnAcessibility = styled.div`
     text-align: left;
     color: #ffffff;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin: 15px 10px;
   }
 `;
 export const TitleAcessibility = styled.div`
@@ -96,4 +86,14 @@ export const ContainerFooter = styled.div`
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center bottom;
+`;
+
+export const ArrowContainer = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+  width: 80%;
+
+  img {
+    width: 150px;
+  }
 `;

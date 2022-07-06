@@ -14,7 +14,10 @@ const GlobalStyle = createGlobalStyle`
 
     button{
         cursor: pointer;
+
     }
+
+   
 
     :root{
         --primary-backgroung: #365DA766;
@@ -34,4 +37,4 @@ const GlobalStyle = createGlobalStyle`
 
 `;
 
-export default GlobalStyle
+export default GlobalStyle;

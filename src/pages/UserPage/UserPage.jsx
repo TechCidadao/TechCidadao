@@ -1,6 +1,6 @@
 import HeaderInternal from "../../components/HeaderInternal/HeaderInternal";
+import ArrowAcessibility from "../../assets/ArrowAcessibilidade.svg";
 import {
-  ButtonAcessibility,
   Container,
   ContainerCards,
   ContainerFooter,
@@ -8,20 +8,34 @@ import {
   ContentContainer,
   SubtitleBtnAcessibility,
   TitleAcessibility,
+  ArrowContainer,
 } from "./style";
 import CardsUser from "../../components/CardsUser/CardsUser";
 import Computer from "../../assets/Computer.svg";
 import Cellphone from "../../assets/Cellphone.svg";
+import { Button } from "../../components/button/index";
+
 const UserPage = () => {
   return (
     <Container>
       <ContentContainer>
         <HeaderInternal />
         <ContainerMid>
-          <ButtonAcessibility>Acessibilidade</ButtonAcessibility>
-          <SubtitleBtnAcessibility>
-            <p>Aperte aqui para escolher sua necessidade</p>
-          </SubtitleBtnAcessibility>
+          <Button
+            title="Acessibilidade"
+            color="#365DA7"
+            BgColor="#ffffff"
+            width="90%"
+          />
+          <ArrowContainer>
+            <img
+              src={ArrowAcessibility}
+              alt="imagem da flecha apontando para o botão de acessibilidade"
+            />
+            <SubtitleBtnAcessibility>
+              <p>Aperte aqui para escolher sua necessidade</p>
+            </SubtitleBtnAcessibility>
+          </ArrowContainer>
         </ContainerMid>
         <TitleAcessibility>
           <p>Aqui você escolhe o que quer aprender!</p>
