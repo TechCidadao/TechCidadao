@@ -50,6 +50,7 @@ export const ContainerMid = styled.div`
     font-weight: 600;
     font-size: 32px;
     color: #365da7;
+    margin: 0;
   }
   img {
     width: 70px;
@@ -86,7 +87,7 @@ export const ContainerEnd = styled.div`
   p {
     width: 160px;
     font-family: "Poppins";
-    font-size: 30px;
+    font-size: 22px;
     font-weight: 600;
     color: #365da7;
     text-align: center;
@@ -100,11 +101,17 @@ export const ContainerEnd = styled.div`
     img {
       width: 50px;
     }
+    p {
+      font-size: 26px;
+    }
   }
   @media (min-width: 1440px) {
     justify-content: center;
     img {
       width: 50px;
+    }
+    p {
+      font-size: 26px;
     }
   }
 `;
