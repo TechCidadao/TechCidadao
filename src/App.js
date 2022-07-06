@@ -1,7 +1,7 @@
 import { HomePage } from "./pages/homepage";
 
 function App() {
-  return <div className="App"></div>;
+  return <></>;
 }
 
 export default App;
