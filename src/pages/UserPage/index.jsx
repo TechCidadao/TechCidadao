@@ -1,4 +1,4 @@
-import HeaderInternal from "../../components/headerInternal";
+import HeaderInternal from "../../components/headerInternal/index";
 import ArrowAcessibility from "../../assets/ArrowAcessibilidade.svg";
 import {
   Container,
@@ -9,12 +9,12 @@ import {
   SubtitleBtnAcessibility,
   TitleAcessibility,
 } from "./style";
-import CardsUser from "../../components/cardsUser";
+import CardsUser from "../../components/cardsUser/index";
 import Computer from "../../assets/Computer.svg";
 import Cellphone from "../../assets/Cellphone.svg";
 import { Button } from "../../components/button/index";
 
-const UserPage = () => {
+export const UserPage = () => {
   return (
     <Container>
       <ContentContainer>
@@ -50,9 +50,7 @@ const UserPage = () => {
           <CardsUser photo={Cellphone} textAlt="Ícone clicável de um Celular" />
         </ContainerCards>
       </ContentContainer>
-      <ContainerFooter></ContainerFooter>
+      <ContainerFooter />
     </Container>
   );
 };
-
-export default UserPage;
