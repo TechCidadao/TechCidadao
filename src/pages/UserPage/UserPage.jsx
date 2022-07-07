@@ -1,4 +1,4 @@
-import HeaderInternal from "../../components/HeaderInternal/HeaderInternal";
+import HeaderInternal from "../../components/headerInternal";
 import ArrowAcessibility from "../../assets/ArrowAcessibilidade.svg";
 import {
   Container,
@@ -9,7 +9,7 @@ import {
   SubtitleBtnAcessibility,
   TitleAcessibility,
 } from "./style";
-import CardsUser from "../../components/CardsUser/CardsUser";
+import CardsUser from "../../components/cardsUser";
 import Computer from "../../assets/Computer.svg";
 import Cellphone from "../../assets/Cellphone.svg";
 import { Button } from "../../components/button/index";
@@ -22,10 +22,10 @@ const UserPage = () => {
         <ContainerMid>
           <Button
             title="Acessibilidade"
-            color="#365DA7"
-            BgColor="#ffffff"
+            color="var(--blue-sky)"
+            BgColor="var(--white)"
             width="300px"
-            hoverColor={"#1e1e1e"}
+            hoverColor={"var(--black)"}
           />
           <div className="arrowPosition">
             <img

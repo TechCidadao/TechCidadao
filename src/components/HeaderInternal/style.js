@@ -7,7 +7,7 @@ export const ContainerHeader = styled.div`
   justify-content: space-around;
   min-width: 100%;
   height: 261px;
-  background-color: rgba(255, 255, 255, 0.97);
+  background-color: var(--white);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   padding-top: 17px;
   @media (min-width: 1024px) {
@@ -46,10 +46,9 @@ export const ContainerMid = styled.div`
   width: 100%;
 
   p {
-    font-family: "Poppins";
     font-weight: 600;
     font-size: 32px;
-    color: #365da7;
+    color: var(--blue-sky);
     margin: 0;
   }
   img {
@@ -86,10 +85,9 @@ export const ContainerEnd = styled.div`
 
   p {
     width: 160px;
-    font-family: "Poppins";
     font-size: 22px;
     font-weight: 600;
-    color: #365da7;
+    color: var(--blue-sky);
     text-align: center;
     margin: 0px;
   }
@@ -121,13 +119,12 @@ export const ButtonEnd = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #365da7;
+  background: var(--blue-sky);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
-  font-family: "Poppins";
   font-weight: 600;
   font-size: 32px;
-  color: #ffffff;
+  color: var(--white);
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin-left: 5px;
   border: none;

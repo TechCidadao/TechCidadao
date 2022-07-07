@@ -3,7 +3,7 @@ import PeopleTogether from "../../assets/PeopleTogether.png";
 
 export const Container = styled.div`
   min-height: 100vh;
-  background-color: #364462;
+  background-color: var(--background);
   display: flex;
   justify-content: flex-start;
   align-content: center;
@@ -63,11 +63,10 @@ export const SubtitleBtnAcessibility = styled.div`
   margin: 5px 10px;
 
   p {
-    font-family: "Poppins";
     font-weight: 600;
     font-size: 20px;
     text-align: left;
-    color: #ffffff;
+    color: var(--white);
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 `;
@@ -80,7 +79,7 @@ export const TitleAcessibility = styled.div`
     font-family: "Inter";
     font-weight: 600;
     font-size: 30px;
-    color: #ffffff;
+    color: var(--white);
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
   @media (min-width: 1024px) {

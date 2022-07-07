@@ -20,9 +20,10 @@ const GlobalStyle = createGlobalStyle`
    
 
     :root{
-        --primary-backgroung: #365DA766;
+        --primary-background: #365DA766;
         --blue: #3680C5;
-        --purple:#3C28AF;
+        --blue-marine:#3C28AF;
+        --blue-sky: #365da7;
         --green-primary:#2A7000;
         --green-secundary:#36A763;
 
