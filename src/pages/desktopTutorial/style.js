@@ -1,0 +1,80 @@
+import styled from "styled-components";
+
+export const Container = styled.div`
+  min-height: 100vh;
+  background-color: var(--background);
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  flex-direction: column;
+`;
+
+export const ContentContainer = styled.div`
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+`;
+export const ContainerMid = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0px 40px 0px;
+  width: 100%;
+
+  .arrowPosition {
+    display: flex;
+    width: 250px;
+    flex-direction: row-reverse;
+  }
+  .arrowImg {
+    width: 90px;
+    margin-top: -55px;
+  }
+
+  @media (min-width: 1024px) {
+    display: flex;
+    justify-content: flex-end;
+    align-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 50px;
+    width: 80%;
+
+    .arrowImg {
+      width: 100px;
+      margin-top: -21px;
+      margin-right: 20px;
+      z-index: -1;
+    }
+
+    .arrowPosition {
+      width: 320px;
+    }
+  }
+`;
+
+export const SubtitleBtnAcessibility = styled.div`
+  width: 70%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 5px 10px;
+
+  p {
+    font-weight: 600;
+    font-size: 20px;
+    text-align: left;
+    color: var(--white);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+`;
+
+export const ContainerCards = styled.div`
+  @media (min-width: 1024px) {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+`;
