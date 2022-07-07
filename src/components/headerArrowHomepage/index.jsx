@@ -1,4 +1,4 @@
-export const HomeHeaderDownArrow = () => {
+export const HomeHeaderDownArrow = ({ height }) => {
   return (
     <div className="custom-shape-divider-top-1657030231">
       <svg

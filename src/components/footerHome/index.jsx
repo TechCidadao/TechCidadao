@@ -1,4 +1,4 @@
-import { MidArrowContainer } from "../headerMidArrows/style";
+import { MidArrowContainer } from "components/headerHome/style";
 import { HomeHeaderDownArrow } from "../headerArrowHomepage";
 import { HomeHeaderArrowContainer } from "../headerArrowHomepage/style";
 import FooterImg from "../../assets/hands.png";
@@ -17,8 +17,8 @@ export const Footer = () => {
 
       <DivFooter>
         <HomeHeaderArrowContainer
-          BgColor="#3c28af00"
-          transitionColor="#3C28AF"
+          BgColor="var(--blue-marine)"
+          transitionColor="var(--blue-marine)"
           shape="rotate(0deg)"
           style={{
             clipPath: "polygon(100% 0, 100% 100%, 0 100%, 0 0, 51% 54%)",
@@ -28,10 +28,10 @@ export const Footer = () => {
         >
           <HomeHeaderDownArrow />
         </HomeHeaderArrowContainer>
-        <MidArrowContainer BgColor="#3C28AF">
+        <MidArrowContainer BgColor="var(--blue-marine)">
           <section>
-            <h1>Sobre nós</h1>
-            <p>
+            <h1 tabIndex={"0"}>Sobre nós</h1>
+            <p tabIndex={"0"}>
               Somos uma equipe que se importa com o ser humano e com o
               conhecimento que possuímos decidimos desenvolver uma plataforma
               que auxilia a você a aprender do ínicio até chegar a sua autônomia

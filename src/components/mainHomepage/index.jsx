@@ -10,12 +10,12 @@ export const MainHome = () => {
           <SectionBtn>
             <Button
               title="Entrar"
-              BgColor="#365DA7"
-              color="#ffff"
+              BgColor="var(--blue-sky)"
+              color="var(--white)"
               width="300px"
-              hoverColor={"#3C28AF"}
+              hoverColor={"var(--black)"}
             />
-            <h1>
+            <h1 tabIndex={"0"}>
               O que é Cadastro e porque cadastrar? Aperte nessas letras para
               saber
             </h1>
@@ -23,12 +23,12 @@ export const MainHome = () => {
           <SectionBtn>
             <Button
               title="Cadastre-se"
-              BgColor="#365DA7"
-              color="#ffff"
+              BgColor="var(--blue-sky)"
+              color="var(--white)"
               width="300px"
-              hoverColor={"#3C28AF"}
+              hoverColor={"var(--black)"}
             />
-            <h1>
+            <h1 tabIndex={"0"}>
               O que é Entrar e porque entrar? Aperte nessas letras para saber
             </h1>
           </SectionBtn>

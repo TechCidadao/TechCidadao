@@ -14,7 +14,7 @@ export const Button = ({ title, width, color, BgColor, hoverColor }) => {
         <p>
           {title}
 
-          {BgColor === "#365DA7" ? (
+          {BgColor === "var(--blue-sky)" ? (
             <img src={WhiteIcon} alt="icone indicando clique" />
           ) : (
             <img src={BlueIcon} alt="icone indicando clique" />

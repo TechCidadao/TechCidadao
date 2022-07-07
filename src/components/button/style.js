@@ -23,7 +23,6 @@ export const GlobalButton = styled.button.attrs((props) => ({
     align-items: center;
     justify-content: center;
     gap: 10px;
-    font-family: "Poppins";
     font-weight: 600;
     text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
     font-size: 30px;
@@ -31,7 +30,7 @@ export const GlobalButton = styled.button.attrs((props) => ({
   &:hover,
   &:focus,
   &:active {
-    background-color: ${(props) => props.hoverColor};
+    border: 4px solid ${(props) => props.hoverColor};
   }
 
   @media (min-width: 600px) {

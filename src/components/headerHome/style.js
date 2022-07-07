@@ -6,8 +6,8 @@ export const HomeHeaderBox = styled.div`
   align-items: center;
   background: linear-gradient(
     0deg,
-    rgb(28 7 162) 20%,
-    rgb(54 93 167 / 55%) 100%
+    var(--blue-marine) 20%,
+    var(--blue-sky) 100%
   );
 
   width: 100%;
@@ -76,6 +76,37 @@ export const BoxImg = styled.div`
   @media (min-width: 600px) {
     img {
       width: 500px;
+    }
+  }
+`;
+
+export const MidArrowContainer = styled.div.attrs((props) => ({
+  BgColor: props.BgColor,
+}))`
+  background-color: ${(props) => props.BgColor};
+  padding: 10px;
+
+  h1 {
+    margin: 0;
+    font-size: 15px;
+    color: white;
+    letter-spacing: 2px;
+    text-shadow: 4px 3px 4px rgb(41 35 35);
+  }
+  p {
+    color: wheat;
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  @media (min-width: 600px) {
+    h1 {
+      font-size: 30px;
+      width: 90%;
+      padding: 0px 10px 0px 10px;
+    }
+    p {
+      font-size: 30px;
     }
   }
 `;
