@@ -11,12 +11,15 @@ export const Button = ({ title, width, color, BgColor, hoverColor }) => {
         color={color}
         BgColor={BgColor}
       >
-        {title}
-        {BgColor === "#365DA7" ? (
-          <img src={WhiteIcon} alt="icone indicando clique" />
-        ) : (
-          <img src={BlueIcon} alt="icone indicando clique" />
-        )}
+        <p>
+          {title}
+
+          {BgColor === "#365DA7" ? (
+            <img src={WhiteIcon} alt="icone indicando clique" />
+          ) : (
+            <img src={BlueIcon} alt="icone indicando clique" />
+          )}
+        </p>
       </GlobalButton>
     </>
   );

@@ -11,23 +11,23 @@ export const GlobalButton = styled.button.attrs((props) => ({
   width: ${(props) => props.width};
   border: none;
   box-shadow: 2px 6px 2px -1px #0000005c;
-  padding: 20px;
   border-radius: 8px;
-  height: 12vh;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 35px;
-  gap: 15px;
-  font-family: "Poppins";
-  font-weight: 600;
-  text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
 
   img {
     width: 40px;
   }
 
+  p {
+    padding: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: "Poppins";
+    font-weight: 600;
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    font-size: 30px;
+  }
   &:hover,
   &:focus,
   &:active {
@@ -35,5 +35,6 @@ export const GlobalButton = styled.button.attrs((props) => ({
   }
 
   @media (min-width: 600px) {
+    width: 320px;
   }
 `;

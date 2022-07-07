@@ -8,7 +8,6 @@ import {
   ContentContainer,
   SubtitleBtnAcessibility,
   TitleAcessibility,
-  ArrowContainer,
 } from "./style";
 import CardsUser from "../../components/CardsUser/CardsUser";
 import Computer from "../../assets/Computer.svg";
@@ -25,17 +24,19 @@ const UserPage = () => {
             title="Acessibilidade"
             color="#365DA7"
             BgColor="#ffffff"
-            width="90%"
+            width="300px"
+            hoverColor={"#1e1e1e"}
           />
-          <ArrowContainer>
+          <div className="arrowPosition">
             <img
+              className="arrowImg"
               src={ArrowAcessibility}
               alt="imagem da flecha apontando para o botão de acessibilidade"
             />
             <SubtitleBtnAcessibility>
               <p>Aperte aqui para escolher sua necessidade</p>
             </SubtitleBtnAcessibility>
-          </ArrowContainer>
+          </div>
         </ContainerMid>
         <TitleAcessibility>
           <p>Aqui você escolhe o que quer aprender!</p>

@@ -4,7 +4,7 @@ export const MidArrowContainer = styled.div.attrs((props) => ({
   BgColor: props.BgColor,
 }))`
   background-color: ${(props) => props.BgColor};
-  padding: 10px 10px;
+  padding: 10px;
 
   h1 {
     margin: 0;
@@ -23,7 +23,10 @@ export const MidArrowContainer = styled.div.attrs((props) => ({
     h1 {
       font-size: 30px;
       width: 90%;
-      padding: 0px 10px px 0px 10px;
+      padding: 0px 10px 0px 10px;
+    }
+    p {
+      font-size: 30px;
     }
   }
 `;

@@ -1,4 +1,3 @@
-import { style } from "@mui/system";
 import styled from "styled-components";
 
 export const HomeHeaderBox = styled.div`
@@ -18,9 +17,9 @@ export const HomeHeaderBox = styled.div`
     text-align: center;
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 1024px) {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 0;
     height: 417px;
 
@@ -37,48 +36,46 @@ export const HomeHeaderBox = styled.div`
 
 export const ContainerArrow = styled.div`
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 20px 10px;
   align-items: center;
-  flex-direction: row-reverse;
-  justify-content: center;
-  gap: 70px;
-  width: 100%;
 
-  img {
-    width: 100px;
+  .arrowPosition {
+    display: flex;
+    align-items: flex-start;
+
+    img {
+      width: 80px;
+      margin-top: -20px;
+    }
   }
 
   h1 {
     color: white;
-    text-align: start;
-    font-size: 15px;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 96%);
   }
 
   @media (min-width: 1024px) {
-    width: 70%;
-
-    img {
-      width: 150px;
-    }
+    margin-top: 105px;
   }
 `;
-export const BoxImg = styled.div.attrs((props) => ({
-  position: props.position,
-  space: props.space,
-}))`
-  margin-top: ${(props) => props.space};
-  position: ${(props) => props.position};
-  text-align: center;
+export const BoxImg = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   img {
     width: 90%;
   }
 
   @media (min-width: 600px) {
-    display: flex;
-    margin: 0;
     img {
-      width: 320px;
-      padding: 10px;
+      width: 500px;
     }
   }
 `;
