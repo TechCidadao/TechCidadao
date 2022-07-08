@@ -9,7 +9,7 @@ import {
   SubtitleBtnAcessibility,
   TitleAcessibility,
 } from "./style";
-import { CardsUser } from "../../components/CardsUser";
+import { CardsUser } from "../../components/cardUser/index";
 import Computer from "../../assets/Computer.svg";
 import Cellphone from "../../assets/Cellphone.svg";
 import { Button } from "../../components/button";
