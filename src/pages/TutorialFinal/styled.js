@@ -67,14 +67,14 @@ export const Container = styled.div`
       border-radius: 8px;
 
       .div-video {
-        width: 20rem;
-        height: 12rem;
+        width: 80vw;
+        height: 35vh;
         margin-top: 1rem;
         margin-bottom: 1rem;
       }
 
       .div-text {
-        width: 18.75rem;
+        width: 80vw;
         height: 12.5rem;
       }
     }
@@ -201,7 +201,7 @@ export const Container = styled.div`
         width: 25vw;
         margin-top: 2rem;
         margin-left: 1rem;
-        height: 97px;
+        height: 10vh;
         background-color: white;
         border: 1px solid black;
         border-radius: 8px;
@@ -241,14 +241,12 @@ export const Container = styled.div`
       height: 20rem;
       background-color: white;
       border-radius: 8px;
-
       div {
         width: 90%;
         padding-top: 1rem;
         margin: 0 auto;
       }
     }
-
     .main {
       width: 95vw;
       margin-top: 2rem;
@@ -256,5 +254,6 @@ export const Container = styled.div`
       flex-direction: row;
       justify-content: space-around;
     }
+
   }
 `;
