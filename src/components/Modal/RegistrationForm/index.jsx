@@ -4,12 +4,14 @@ import { useForm } from "react-hook-form";
 import { TextField } from "@mui/material";
 import { yupResolver } from "@hookform/resolvers/yup";
 
-export const RegistrationForm = () => {
+export const RegistrationForm = ({ setSelectType }) => {
   const schema = yup.object().shape({
     email: yup
       .string()
       .required("Você precisa colocar seu endereço eletrônico."),
     password: yup.string().required("Você precisa colocar sua senha"),
+    name: yup.string().required("Você precisa colocar seu nome"),
+    age: yup.string().required("Você precisa colocar sua idade"),
   });
 
   const {
@@ -22,6 +24,7 @@ export const RegistrationForm = () => {
 
   const onSubmitFunction = (data) => {
     console.log(data);
+    setSelectType("success");
   };
 
   return (
@@ -32,21 +35,25 @@ export const RegistrationForm = () => {
           {...register("email")}
           label="Seu email"
           placeholder="Seu endereço eletronico"
+          helperText={errors.email?.message}
         />
         <TextField
           {...register("password")}
           label="Sua senha"
           placeholder="Coloque sua senha"
+          helperText={errors.password?.message}
         />
         <TextField
           {...register("name")}
           label="Seu nome"
           placeholder="Como quer ser chamado?"
+          helperText={errors.name?.message}
         />
         <TextField
           {...register("age")}
           label="Idade"
           placeholder="Qual a sua idade?"
+          helperText={errors.age?.message}
         />
         <ThemeButton type="submit">Aperte para cadastrar</ThemeButton>
       </StyledForm>

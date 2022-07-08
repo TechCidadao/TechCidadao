@@ -32,11 +32,13 @@ export const LoginForm = () => {
           {...register("email")}
           label="Email"
           placeholder="Seu endereço eletronico"
+          helperText={errors.email?.message}
         />
         <TextField
           {...register("password")}
           label="Senha"
           placeholder="Coloque sua senha"
+          helperText={errors.password?.message}
         />
         <ThemeButton type="submit">Aperte para entrar</ThemeButton>
       </StyledForm>

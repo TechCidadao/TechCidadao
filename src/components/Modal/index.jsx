@@ -1,24 +1,30 @@
 import { useState } from "react";
+import { AccessButtons } from "./AccessButtons";
 import { LoginForm } from "./LoginForm";
 import { ModalLoginTutotial } from "./LoginTutorial";
 import { RegistrationForm } from "./RegistrationForm";
 import { RegistrationTutorial } from "./RegistrationTutorial";
 import { BodyModal, CloseModal, HeadModal, HeadText, ModalBg } from "./style";
+import { Success } from "./Success";
 
 export const Modal = ({ type }) => {
   const [selectType, setSelectType] = useState(type);
   function modalType(type) {
     switch (type) {
       case "loginTutorial":
-        return <ModalLoginTutotial setSelectType={setSelectType} />;
+        return <ModalLoginTutotial />;
       case "loginForm":
         return <LoginForm />;
       case "registration":
-        return <RegistrationTutorial setSelectType={setSelectType} />;
+        return <RegistrationTutorial />;
       case "registrarionForm":
-        return <RegistrationForm />;
+        return <RegistrationForm setSelectType={setSelectType} />;
+      case "access":
+        return <AccessButtons />;
+      case "success":
+        return <Success />;
       default:
-        return <span>nada</span>;
+        return;
     }
   }
   return (
