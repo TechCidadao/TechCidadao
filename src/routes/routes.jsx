@@ -1,7 +1,7 @@
 import { DesktopTutorial } from "../pages/desktopTutorial";
-import { HomePage } from "../pages/homepage/index";
-import { MobileTutorial } from "../pages/mobileTutorial/index";
-import { UserPage } from "../pages/userPage/index";
+import { HomePage } from "../pages/homepage";
+import { MobileTutorial } from "../pages/mobileTutorial";
+import { UserPage } from "../pages/UserPage";
 //substituir conteúdo interno das tags das rotas
 import { Route, Routes } from "react-router-dom";
 export const MainRoutes = () => {

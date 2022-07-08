@@ -17,10 +17,14 @@ export const ContentContainer = styled.div`
 `;
 export const ContainerMid = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
   margin: 30px 0px 40px 0px;
   width: 100%;
+
+  gap: 50px;
+  color: var(--white);
+  text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
 
   .arrowPosition {
     display: flex;
@@ -34,11 +38,9 @@ export const ContainerMid = styled.div`
 
   @media (min-width: 1024px) {
     display: flex;
-    justify-content: flex-end;
-    align-content: flex-end;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-right: 50px;
+    justify-content: space-between;
+    flex-direction: row;
+
     width: 80%;
 
     .arrowImg {
@@ -75,6 +77,6 @@ export const ContainerCards = styled.div`
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
   }
 `;
