@@ -9,7 +9,6 @@ export const HomePage = () => {
       <HeaderHome />
       <MainHome />
       <Footer />
-      <Modal type="registration" />
     </>
   );
 };
