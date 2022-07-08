@@ -15,9 +15,17 @@ export const Button = ({ title, width, color, BgColor, hoverColor }) => {
           {title}
 
           {BgColor === "var(--blue-sky)" ? (
-            <img src={WhiteIcon} alt="icone indicando clique" />
+            <img
+              className="btnMobile"
+              src={WhiteIcon}
+              alt="icone indicando clique"
+            />
           ) : (
-            <img src={BlueIcon} alt="icone indicando clique" />
+            <img
+              className="btnMobile"
+              src={BlueIcon}
+              alt="icone indicando clique"
+            />
           )}
         </p>
       </GlobalButton>
