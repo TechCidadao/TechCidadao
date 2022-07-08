@@ -14,11 +14,12 @@ export const CardsTutorial = ({
     <>
       <ContainerCard>
         <ContainerImg imgHeight={imgHeight} imgWidth={imgWidth}>
-          <img src={photo} alt={textAlt} />
+          <img tabIndex={0} src={photo} alt={textAlt} />
         </ContainerImg>
-        <TitleCard>{title}</TitleCard>
-        <TextCard>{text}</TextCard>
+        <TitleCard tabIndex={0}>{title}</TitleCard>
+        <TextCard tabIndex={0}>{text}</TextCard>
         <Button
+          tabIndex={0}
           title="Aperte aqui!"
           BgColor="var(--blue-sky)"
           color="var(--white)"
