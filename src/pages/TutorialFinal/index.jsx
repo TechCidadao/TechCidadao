@@ -26,7 +26,6 @@ export const PageTutorial = () =>{
               </div>
               <div className="div-text">
                 <h3>
-                  {" "}
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua
                 </h3>
@@ -35,7 +34,6 @@ export const PageTutorial = () =>{
             <div className="info-container">
               <div>
                 <p>
-                  {" "}
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua
                 </p>
