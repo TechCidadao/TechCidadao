@@ -22,8 +22,9 @@ export const DesktopTutorial = () => {
         <HeaderInternal />
         <ContainerMid>
           <div style={{ textAlignLast: "center" }}>
-            <h1>Sobre Computador:</h1>
+            <h1 tabIndex={0}>Sobre Computador:</h1>
             <img
+              tabIndex={0}
               src={ArrowTitle}
               alt="Seta apontando para os cards de conteúdo"
             />
@@ -38,12 +39,13 @@ export const DesktopTutorial = () => {
             />
             <div className="arrowPosition">
               <img
+                tabIndex={0}
                 className="arrowImg"
                 src={ArrowAcessibility}
                 alt="imagem da flecha apontando para o botão de acessibilidade"
               />
               <SubtitleBtnAcessibility>
-                <p>Aperte aqui para escolher sua necessidade</p>
+                <p tabIndex={0}>Aperte aqui para escolher sua necessidade</p>
               </SubtitleBtnAcessibility>
             </div>
           </div>
