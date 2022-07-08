@@ -3,7 +3,7 @@ import PeopleTogether from "../../assets/PeopleTogether.png";
 
 export const Container = styled.div`
   min-height: 100vh;
-  background-color: #364462;
+  background-color: var(--background);
   display: flex;
   justify-content: flex-start;
   align-content: center;
@@ -20,25 +20,41 @@ export const ContainerMid = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 30px 0px 40px 0px;
+  width: 100%;
+
+  .arrowPosition {
+    display: flex;
+    width: 250px;
+    flex-direction: row-reverse;
+  }
+  .arrowImg {
+    width: 90px;
+    margin-top: -55px;
+  }
+
   @media (min-width: 1024px) {
     display: flex;
     justify-content: flex-end;
     align-content: flex-end;
-    flex-direction: row-reverse;
-    margin: 35px 0px;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 50px;
+    width: 80%;
+
+    .arrowImg {
+      width: 100px;
+      margin-top: -21px;
+      margin-right: 20px;
+      z-index: -1;
+    }
+
+    .arrowPosition {
+      width: 320px;
+    }
   }
 `;
-export const ButtonAcessibility = styled.button`
-  width: 95%;
-  height: 97px;
-  font-size: 35px;
-  font-weight: 600;
-  margin-top: 35px;
-  cursor: pointer;
-  @media (min-width: 1024px) {
-    margin: 0px;
-  }
-`;
+
 export const SubtitleBtnAcessibility = styled.div`
   width: 70%;
   display: flex;
@@ -47,13 +63,11 @@ export const SubtitleBtnAcessibility = styled.div`
   margin: 5px 10px;
 
   p {
-    font-family: "Poppins";
     font-weight: 600;
-    font-size: 30px;
+    font-size: 20px;
     text-align: left;
-    color: #ffffff;
+    color: var(--white);
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin: 15px 10px;
   }
 `;
 export const TitleAcessibility = styled.div`
@@ -65,7 +79,7 @@ export const TitleAcessibility = styled.div`
     font-family: "Inter";
     font-weight: 600;
     font-size: 30px;
-    color: #ffffff;
+    color: var(--white);
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
   @media (min-width: 1024px) {

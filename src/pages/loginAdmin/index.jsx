@@ -1,28 +1,28 @@
 import { Container } from "./styled";
 
-
-const LoginAdmin = () =>{
+export const LoginAdmin = () => {
   return (
     <Container>
       <div className="header">
-        <h1>PÁGINA DO ADMIN</h1> <button>Sair</button>
+        <h1>PÁGINA DO ADMIN</h1>
+        <button>Sair</button>
       </div>
 
       <div className="Body">
         <h2>Criar Card</h2>
 
         <form>
-        <div className="input-topo">
-          <div className="content titulo">
-            <label>Título</label>
-            <input type="text" placeholder="Título" />
-          </div>
+          <div className="input-topo">
+            <div className="content titulo">
+              <label>Título</label>
+              <input type="text" placeholder="Título" />
+            </div>
 
-          <div className="content descricao">
-            <label>Descrição</label>
-            <input type="text" placeholder="Descrição" />
+            <div className="content descricao">
+              <label>Descrição</label>
+              <input type="text" placeholder="Descrição" />
+            </div>
           </div>
-        </div>
 
           <div className="content inputs">
             <label>Ícone/url</label>
@@ -50,6 +50,6 @@ const LoginAdmin = () =>{
       </div>
     </Container>
   );
-}
+};
 
-export default LoginAdmin
+export default LoginAdmin;

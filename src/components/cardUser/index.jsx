@@ -1,6 +1,6 @@
 import { ContainerCard } from "./style";
 
-const CardsUser = ({ photo, textAlt }) => {
+export const CardsUser = ({ photo, textAlt }) => {
   return (
     <>
       <ContainerCard>
@@ -9,4 +9,3 @@ const CardsUser = ({ photo, textAlt }) => {
     </>
   );
 };
-export default CardsUser;

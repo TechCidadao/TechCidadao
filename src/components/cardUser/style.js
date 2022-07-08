@@ -5,10 +5,10 @@ export const Container = styled.div`
   justify-content: space-around;
   align-items: center;
 `;
-export const ContainerCard = styled.div`
+export const ContainerCard = styled.button`
   width: 265px;
   height: 276px;
-  background-color: #ffffff;
+  background-color: var(--white);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,8 +16,14 @@ export const ContainerCard = styled.div`
   border-radius: 15px;
   margin: 15px 0px;
   cursor: pointer;
+  border: none;
   img {
     width: 210px;
     height: 210px;
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    border: 5px solid var(--black);
   }
 `;
