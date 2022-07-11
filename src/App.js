@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { MainRoutes } from "routes/routes";
 import GlobalStyle from "styles/GlobalStyle";
 import VLibras from "@djpfs/react-vlibras";

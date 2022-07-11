@@ -6,8 +6,11 @@ import bgHeader from "../../assets/bgHeader.png";
 import { Button } from "../button";
 import ArrowAcessibilidade from "../../assets/ArrowAcessibilidade.svg";
 import { MidArrowContainer } from "../headerHome/style";
+import { Modal } from "components/Modal";
+import { useState } from "react";
 
 export const HeaderHome = () => {
+  const [modalAccess, setModalAccess] = useState(false);
   return (
     <>
       <HomeHeaderBox>
@@ -32,7 +35,9 @@ export const HeaderHome = () => {
             color="var(--blue-sky)"
             hoverColor={"var(--black)"}
             width={"300px"}
+            setModalAccess={setModalAccess}
           />
+
           <div className="arrowPosition">
             <h1 tabIndex={"0"}>
               Aperte aqui
@@ -69,6 +74,7 @@ export const HeaderHome = () => {
       >
         <HomeHeaderDownArrow />
       </HomeHeaderArrowContainer>
+      {modalAccess && <Modal type="access" setModalAccess={setModalAccess} />}
     </>
   );
 };
