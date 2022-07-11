@@ -12,7 +12,7 @@ import {
 import { CardsUser } from "../../components/cardUser/index";
 import Computer from "../../assets/Computer.svg";
 import Cellphone from "../../assets/Cellphone.svg";
-import { Button } from "../../components/button";
+import { Button } from "../../components/button/index";
 
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
