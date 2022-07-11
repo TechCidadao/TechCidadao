@@ -9,7 +9,7 @@ import {
   ContentContainer,
   SubtitleBtnAcessibility,
 } from "./style";
-import { Button } from "../../components/button";
+import { Button } from "../../components/button/index";
 import { CardsTutorial } from "components/cardsTutorial";
 
 import IconMouse from "../../assets/MouseImg.png";
