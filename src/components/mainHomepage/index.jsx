@@ -20,8 +20,9 @@ export const MainHome = () => {
               color="var(--white)"
               width="300px"
               hoverColor={"var(--black)"}
+              setModalLoginForm={setModalLoginForm}
             />
-            <h1 tabIndex={"0"}>
+            <h1 tabIndex={"0"} onClick={() => setModalLogin(true)}>
               O que é Cadastro e porque cadastrar? Aperte nessas letras para
               saber
             </h1>
@@ -33,13 +34,26 @@ export const MainHome = () => {
               color="var(--white)"
               width="300px"
               hoverColor={"var(--black)"}
+              setModalRegisForm={setModalRegisForm}
             />
-            <h1 tabIndex={"0"}>
+            <h1 tabIndex={"0"} onClick={() => setModalRegis(true)}>
               O que é Entrar e porque entrar? Aperte nessas letras para saber
             </h1>
           </SectionBtn>
         </ContainerBtn>
       </ContainerMain>
+      {modalRegisForm && (
+        <Modal type="registrarionForm" setModalRegisForm={setModalRegisForm} />
+      )}
+      {modalLoginForm && (
+        <Modal type="loginForm" setModalLoginForm={setModalLoginForm} />
+      )}
+      {modalRegis && (
+        <Modal type="registration" setModalRegis={setModalRegis} />
+      )}
+      {modalLogin && (
+        <Modal type="loginTutorial" setModalLogin={setModalLogin} />
+      )}
     </>
   );
 };

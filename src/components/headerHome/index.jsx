@@ -35,6 +35,7 @@ export const HeaderHome = () => {
             color="var(--blue-sky)"
             hoverColor={"var(--black)"}
             width={"300px"}
+            setModalAccess={setModalAccess}
           />
 
           <div className="arrowPosition">
@@ -73,7 +74,7 @@ export const HeaderHome = () => {
       >
         <HomeHeaderDownArrow />
       </HomeHeaderArrowContainer>
-      {modalAccess && <Modal type="access" />}
+      {modalAccess && <Modal type="access" setModalAccess={setModalAccess} />}
     </>
   );
 };

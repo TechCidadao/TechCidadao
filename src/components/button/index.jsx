@@ -2,7 +2,29 @@ import { GlobalButton } from "./style";
 import BlueIcon from "../../assets/BlueIcon.svg";
 import WhiteIcon from "../../assets/WhiteIcon.svg";
 
-export const Button = ({ title, width, color, BgColor, hoverColor }) => {
+export const Button = ({
+  title,
+  width,
+  color,
+  BgColor,
+  hoverColor,
+  setModalAccess,
+  setModalRegisForm,
+  setModalLoginForm,
+}) => {
+  function handleClick(event) {
+    const button = event.currentTarget.children[0].textContent;
+
+    if (button === "Entrar") {
+      setModalLoginForm(true);
+    }
+    if (button === "Cadastre-se") {
+      setModalRegisForm(true);
+    }
+    if (button === "Acessibilidade") {
+      setModalAccess(true);
+    }
+  }
   return (
     <>
       <GlobalButton
@@ -10,6 +32,7 @@ export const Button = ({ title, width, color, BgColor, hoverColor }) => {
         width={width}
         color={color}
         BgColor={BgColor}
+        onClick={(event) => handleClick(event)}
       >
         <p>
           {title}

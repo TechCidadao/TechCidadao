@@ -7,8 +7,32 @@ import { RegistrationTutorial } from "./RegistrationTutorial";
 import { BodyModal, CloseModal, HeadModal, HeadText, ModalBg } from "./style";
 import { Success } from "./Success";
 
-export const Modal = ({ type }) => {
+export const Modal = ({
+  type,
+  setModalLoginForm,
+  setModalRegisForm,
+  setModalAccess,
+  setModalRegis,
+  setModalLogin,
+}) => {
   const [selectType, setSelectType] = useState(type);
+  function closeModal() {
+    if (type === "registrarionForm") {
+      setModalRegisForm(false);
+    }
+    if (type === "loginForm") {
+      setModalLoginForm(false);
+    }
+    if (type === "access") {
+      setModalAccess(false);
+    }
+    if (type === "loginTutorial") {
+      setModalLogin(false);
+    }
+    if (type === "registration") {
+      setModalRegis(false);
+    }
+  }
   function modalType(type) {
     switch (type) {
       case "loginTutorial":
@@ -31,7 +55,7 @@ export const Modal = ({ type }) => {
     <ModalBg>
       <HeadModal>
         <HeadText>Aperte no X para fechar →</HeadText>
-        <CloseModal>X</CloseModal>
+        <CloseModal onClick={() => closeModal()}>X</CloseModal>
       </HeadModal>
       <BodyModal>{modalType(selectType)}</BodyModal>
     </ModalBg>
