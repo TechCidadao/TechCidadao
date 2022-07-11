@@ -14,7 +14,22 @@ import Computer from "../../assets/Computer.svg";
 import Cellphone from "../../assets/Cellphone.svg";
 import { Button } from "../../components/button/index";
 
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+
 export const UserPage = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    document.addEventListener("keydown", detectKeyDown, true);
+  });
+
+  const detectKeyDown = (e) => {
+    if (e.key === "Escape") {
+      navigate("/");
+    }
+  };
+
   return (
     <Container>
       <ContentContainer>
@@ -29,18 +44,19 @@ export const UserPage = () => {
           />
           <div className="arrowPosition">
             <img
+              tabIndex={0}
               className="arrowImg"
               src={ArrowAcessibility}
               alt="imagem da flecha apontando para o botão de acessibilidade"
             />
             <SubtitleBtnAcessibility>
-              <p>Aperte aqui para escolher sua necessidade</p>
+              <p tabIndex={0}>Aperte aqui para escolher sua necessidade</p>
             </SubtitleBtnAcessibility>
           </div>
         </ContainerMid>
         <TitleAcessibility>
-          <p>Aqui você escolhe o que quer aprender!</p>
-          <p>Aperte no celular ou no computador para começar</p>
+          <p tabIndex={0}>Aqui você escolhe o que quer aprender!</p>
+          <p tabIndex={0}>Aperte no celular ou no computador para começar</p>
         </TitleAcessibility>
         <ContainerCards>
           <CardsUser
