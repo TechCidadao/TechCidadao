@@ -1,8 +1,14 @@
 import { ContainerMain, SectionBtn } from "./style";
 import { Button } from "../../components/button/index";
 import { ContainerBtn } from "./style";
+import { useState } from "react";
+import { Modal } from "components/Modal";
 
 export const MainHome = () => {
+  const [modalRegis, setModalRegis] = useState(false);
+  const [modalRegisForm, setModalRegisForm] = useState(false);
+  const [modalLogin, setModalLogin] = useState(false);
+  const [modalLoginForm, setModalLoginForm] = useState(false);
   return (
     <>
       <ContainerMain>

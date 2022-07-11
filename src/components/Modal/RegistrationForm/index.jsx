@@ -36,24 +36,28 @@ export const RegistrationForm = ({ setSelectType }) => {
           label="Seu email"
           placeholder="Seu endereço eletronico"
           helperText={errors.email?.message}
+          style={{ width: "90%" }}
         />
         <TextField
           {...register("password")}
           label="Sua senha"
           placeholder="Coloque sua senha"
           helperText={errors.password?.message}
+          style={{ width: "90%" }}
         />
         <TextField
           {...register("name")}
           label="Seu nome"
           placeholder="Como quer ser chamado?"
           helperText={errors.name?.message}
+          style={{ width: "90%" }}
         />
         <TextField
           {...register("age")}
           label="Idade"
           placeholder="Qual a sua idade?"
           helperText={errors.age?.message}
+          style={{ width: "90%" }}
         />
         <ThemeButton type="submit">Aperte para cadastrar</ThemeButton>
       </StyledForm>
