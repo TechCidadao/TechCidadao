@@ -14,19 +14,20 @@ const HeaderInternal = () => {
     <>
       <ContainerHeader>
         <ContainerStart>
-          <img src={UserLogo} alt="Ícone do Tech Cidadão" />
+          <img tabIndex={0} src={UserLogo} alt="Ícone do Tech Cidadão" />
         </ContainerStart>
         <ContainerMid>
           <img src={IconsHands} alt="Quatro mãos unidas no centro" />
-          <p>Bem vindo, fulano de tal</p>
+          <p tabIndex={"0"}>Bem vindo, fulano de tal</p>
         </ContainerMid>
         <ContainerEnd>
-          <p>Aperte aqui para Voltar</p>
+          <p tabIndex={"0"}>Aperte aqui para Voltar</p>
           <img
+            tabIndex={0}
             src={ArrowRight}
             alt="Seta para direita indicando o botão para voltar"
           />
-          <ButtonEnd>Voltar</ButtonEnd>
+          <ButtonEnd tabIndex={"0"}>Voltar</ButtonEnd>
         </ContainerEnd>
       </ContainerHeader>
     </>
