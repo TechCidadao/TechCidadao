@@ -1,4 +1,4 @@
-import HeaderInternal from "../../components/headerInternal/index"
+import HeaderInternal from "../../components/headerInternal/index";
 import ArrowAcessibility from "../../assets/ArrowAcessibilidade.svg";
 import {
   Container,
