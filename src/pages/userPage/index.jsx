@@ -14,7 +14,23 @@ import Computer from "../../assets/Computer.svg";
 import Cellphone from "../../assets/Cellphone.svg";
 import { Button } from "../../components/button/index";
 
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+
 export const UserPage = () => {
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    document.addEventListener("keydown", detectKeyDown, true);
+  }, []);
+
+  const detectKeyDown = (e) => {
+    if (e.key === "Escape") {
+      navigate("/");
+    }
+  };
+
   return (
     <Container>
       <ContentContainer>
