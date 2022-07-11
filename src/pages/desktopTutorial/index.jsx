@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
 import HeaderInternal from "../../components/headerInternal/index";
 import ArrowAcessibility from "../../assets/ArrowAcessibilidade.svg";
 import {
@@ -23,14 +22,13 @@ export const DesktopTutorial = () => {
 
   useEffect(() => {
     document.addEventListener("keydown", detectKeyDown, true);
-  }, []);
+  });
 
   const detectKeyDown = (e) => {
     if (e.key === "Escape") {
       navigate("/dashboard");
     }
   };
-  
 
   return (
     <Container>
