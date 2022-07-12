@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const HomeHeaderBox = styled.div`
+export const HomeHeaderBox = styled.section`
   display: inline-flex;
   flex-direction: column;
   align-items: center;
@@ -15,6 +15,10 @@ export const HomeHeaderBox = styled.div`
   section {
     width: 90%;
     text-align: center;
+  }
+
+  p {
+  text-align: start;
   }
 
   @media (min-width: 1024px) {
@@ -34,7 +38,7 @@ export const HomeHeaderBox = styled.div`
   }
 `;
 
-export const ContainerArrow = styled.div`
+export const ContainerArrow = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -52,7 +56,7 @@ export const ContainerArrow = styled.div`
     }
   }
 
-  h1 {
+  small {
     color: white;
     font-size: 20px;
     font-weight: 700;
@@ -80,33 +84,25 @@ export const BoxImg = styled.div`
   }
 `;
 
-export const MidArrowContainer = styled.div.attrs((props) => ({
+export const MidArrowContainer = styled.section.attrs((props) => ({
   BgColor: props.BgColor,
 }))`
   background-color: ${(props) => props.BgColor};
   padding: 10px;
 
-  h1 {
+  h1, h3, p {
     margin: 0;
     font-size: 15px;
     color: white;
     letter-spacing: 2px;
     text-shadow: 4px 3px 4px rgb(41 35 35);
   }
-  p {
-    color: wheat;
-    font-weight: 500;
-    font-size: 20px;
-  }
 
   @media (min-width: 600px) {
-    h1 {
+    h1, h3, p  {
       font-size: 30px;
       width: 90%;
       padding: 0px 10px 0px 10px;
-    }
-    p {
-      font-size: 30px;
     }
   }
 `;

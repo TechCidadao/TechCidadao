@@ -1,4 +1,4 @@
-import HeaderInternal from "components/headerInternal";
+import HeaderInternal from "../../components/headerInternal/index";
 import { Container } from "./styled";
 
 import { useNavigate } from "react-router-dom";
@@ -26,41 +26,41 @@ export const PageTutorial = () => {
       <HeaderInternal titleBtn={"Voltar"} onClick={() => handleClick()} />
 
       <Container>
-        <div className="nav">
-          <div className="btn-nav">
+        <nav className="nav">
+          <section className="btn-nav">
             <div className="container-btn">
-              <button>Acessibilidade</button>
+              <button tabIndex={"0"}>Acessibilidade</button>
             </div>
             <div className="btn-text">
-              <p>Aperte aqui para escolher sua acessibilidade</p>
+              <p tabIndex={"0"}>Aperte aqui para escolher sua acessibilidade</p>
             </div>
-          </div>
+          </section>
           <div className="div-titulo">
-            <h3>Conteudo tal: sobre tal assunto</h3>
+            <h1 tabIndex={"0"}>Conteudo tal: sobre tal assunto</h1>
           </div>
-        </div>
+        </nav>
 
-        <div className="main">
-          <div className="container-video">
+        <main className="main">
+          <section className="container-video">
             <div className="div-video">
               <video controls></video>
             </div>
             <div className="div-text">
-              <h3>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua
-              </h3>
-            </div>
-          </div>
-          <div className="info-container">
-            <div>
-              <p>
+              <p tabIndex={"0"}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua
               </p>
             </div>
-          </div>
-        </div>
+          </section>
+          <section className="info-container">
+            <div>
+              <p tabIndex={"0"}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua
+              </p>
+            </div>
+          </section>
+        </main>
       </Container>
     </>
   );

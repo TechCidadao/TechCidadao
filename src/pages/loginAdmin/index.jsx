@@ -3,16 +3,16 @@ import { Container } from "./styled";
 export const LoginAdmin = () => {
   return (
     <Container>
-      <div className="header">
+      <header className="header">
         <h1>PÁGINA DO ADMIN</h1>
         <button>Sair</button>
-      </div>
+      </header>
 
-      <div className="Body">
+      <main className="Body">
         <h2>Criar Card</h2>
 
         <form>
-          <div className="input-topo">
+          <section className="input-topo">
             <div className="content titulo">
               <label>Título</label>
               <input type="text" placeholder="Título" />
@@ -22,19 +22,19 @@ export const LoginAdmin = () => {
               <label>Descrição</label>
               <input type="text" placeholder="Descrição" />
             </div>
-          </div>
+          </section>
 
-          <div className="content inputs">
+          <section className="content inputs">
             <label>Ícone/url</label>
             <input type="url" placeholder="Url" />
-          </div>
+          </section>
 
-          <div className="content inputs ">
+          <section className="content inputs ">
             <label>Conteudos/links/vidios</label>
             <input className="link" type="text" />
-          </div>
+          </section>
 
-          <div className="div-select">
+          <section className="div-select">
             <div className="content inputs">
               <label>Tipo: Computador ou celular</label>
               <select>
@@ -45,9 +45,9 @@ export const LoginAdmin = () => {
             <div className="btn-container">
               <button>Enviar Conteúdo</button>
             </div>
-          </div>
+          </section>
         </form>
-      </div>
+      </main>
     </Container>
   );
 };
