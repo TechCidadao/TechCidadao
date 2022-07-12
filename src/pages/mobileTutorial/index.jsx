@@ -31,10 +31,14 @@ export const MobileTutorial = () => {
     }
   };
 
+  const handleClick = () =>{
+    navigate("/dashboard")
+  }
+
   return (
     <Container>
       <ContentContainer>
-        <HeaderInternal titleBtn={"voltar"} />
+        <HeaderInternal titleBtn={"voltar"} onClick={() => handleClick()} />
         <ContainerMid>
           <div style={{ textAlignLast: "center" }}>
             <h1 tabIndex={0}>Sobre Celular:</h1>
