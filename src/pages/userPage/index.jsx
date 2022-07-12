@@ -31,10 +31,15 @@ export const UserPage = () => {
     }
   };
 
+  const handleClick = () =>{
+    navigate("/")
+    localStorage.clear()
+  }
+
   return (
     <Container>
       <ContentContainer>
-        <HeaderInternal titleBtn={"sair"} />
+        <HeaderInternal titleBtn={"sair"} onClick={() => handleClick()} />
         <ContainerMid>
           <Button
             title="Acessibilidade"
