@@ -3,13 +3,17 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { TextField } from "@mui/material";
 import { yupResolver } from "@hookform/resolvers/yup";
+import TechCidadaoAPI from "services/api";
+import { toast } from "react-toastify";
 
-export const RegistrationForm = () => {
+export const RegistrationForm = ({ setSelectType }) => {
   const schema = yup.object().shape({
     email: yup
       .string()
       .required("Você precisa colocar seu endereço eletrônico."),
     password: yup.string().required("Você precisa colocar sua senha"),
+    name: yup.string().required("Você precisa colocar seu nome"),
+    age: yup.string().required("Você precisa colocar sua idade"),
   });
 
   const {
@@ -21,7 +25,13 @@ export const RegistrationForm = () => {
   });
 
   const onSubmitFunction = (data) => {
-    console.log(data);
+    TechCidadaoAPI.post(`/register`, data)
+      .then((res) => res)
+      .catch((error) => {
+        toast.error("Algo está errado, tente novamente mais tarde");
+      });
+
+    setSelectType("success");
   };
 
   return (
@@ -30,23 +40,30 @@ export const RegistrationForm = () => {
       <StyledForm onSubmit={handleSubmit(onSubmitFunction)}>
         <TextField
           {...register("email")}
-          label="Seu email"
           placeholder="Seu endereço eletronico"
+          helperText={errors.email?.message}
+          style={{ width: "90%" }}
         />
+
         <TextField
           {...register("password")}
-          label="Sua senha"
           placeholder="Coloque sua senha"
+          helperText={errors.password?.message}
+          style={{ width: "90%" }}
         />
+
         <TextField
           {...register("name")}
-          label="Seu nome"
           placeholder="Como quer ser chamado?"
+          helperText={errors.name?.message}
+          style={{ width: "90%" }}
         />
+
         <TextField
           {...register("age")}
-          label="Idade"
           placeholder="Qual a sua idade?"
+          helperText={errors.age?.message}
+          style={{ width: "90%" }}
         />
         <ThemeButton type="submit">Aperte para cadastrar</ThemeButton>
       </StyledForm>

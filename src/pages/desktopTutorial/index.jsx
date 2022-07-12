@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import HeaderInternal from "../../components/headerInternal/index";
 import ArrowAcessibility from "../../assets/ArrowAcessibilidade.svg";
 import {
@@ -16,10 +18,22 @@ import IconTeclado from "../../assets/TecladoImg.png";
 import ArrowTitle from "../../assets/ArrowTitle.png";
 
 export const DesktopTutorial = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    document.addEventListener("keydown", detectKeyDown, true);
+  });
+
+  const detectKeyDown = (e) => {
+    if (e.key === "Escape") {
+      navigate("/dashboard");
+    }
+  };
+
   return (
     <Container>
       <ContentContainer>
-        <HeaderInternal />
+        <HeaderInternal titleBtn={"voltar"} />
         <ContainerMid>
           <div style={{ textAlignLast: "center" }}>
             <h1 tabIndex={0}>Sobre Computador:</h1>

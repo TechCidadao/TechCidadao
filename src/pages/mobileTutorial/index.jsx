@@ -10,16 +10,31 @@ import {
 import { CardsTutorial } from "components/cardsTutorial";
 import { Button } from "components/button";
 
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+
 import IconSocialMedia from "../../assets/iconSocialMedia.png";
 import IconPeople from "../../assets/iconMySpace.png";
 import ArrowTitle from "../../assets/ArrowTitle.png";
 import IconCell from "../../assets/iconCell.png";
 
 export const MobileTutorial = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    document.addEventListener("keydown", detectKeyDown, true);
+  });
+
+  const detectKeyDown = (e) => {
+    if (e.key === "Escape") {
+      navigate("/dashboard");
+    }
+  };
+
   return (
     <Container>
       <ContentContainer>
-        <HeaderInternal />
+        <HeaderInternal titleBtn={"voltar"} />
         <ContainerMid>
           <div style={{ textAlignLast: "center" }}>
             <h1 tabIndex={0}>Sobre Celular:</h1>

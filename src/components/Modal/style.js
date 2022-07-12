@@ -102,6 +102,15 @@ export const Tutorial = styled.div`
   border-radius: 5px;
 `;
 
+export const SuccessBox = styled.div`
+  width: 100%;
+  height: 100%;
+  padding: 5%;
+
+  background-color: var(--green-primary);
+  border-radius: 5px;
+`;
+
 export const FlexBox = styled.div`
   width: 100%;
   height: 100%;
@@ -109,6 +118,8 @@ export const FlexBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  gap: 5px;
 `;
 
 export const StyledForm = styled.form`
