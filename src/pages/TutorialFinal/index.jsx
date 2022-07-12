@@ -1,3 +1,4 @@
+import HeaderInternal from "components/headerInternal";
 import { Container } from "./styled";
 
 import { useNavigate } from "react-router-dom";
@@ -23,6 +24,7 @@ export const PageTutorial = () => {
 
   return (
     <>
+    <HeaderInternal titleBtn={'Voltar'}/>
       <Container>
         <div className="nav">
           <div className="btn-nav">
