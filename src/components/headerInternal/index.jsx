@@ -9,7 +9,9 @@ import {
   ContainerStart,
 } from "./style";
 
+
 const HeaderInternal = ({ titleBtn, onClick }) => {
+
   const username = localStorage.getItem("@TC:username");
   const firstName = username.split(" ")[0];
 

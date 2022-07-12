@@ -31,10 +31,10 @@ export const UserPage = () => {
     }
   };
 
-  const handleClick = () =>{
-    navigate("/")
-    localStorage.clear()
-  }
+  const handleClick = () => {
+    navigate("/");
+    localStorage.clear();
+  };
 
   return (
     <Container>

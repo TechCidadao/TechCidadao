@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 export const PageTutorial = () => {
-
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -18,13 +17,14 @@ export const PageTutorial = () => {
     }
   };
 
-  const handleClick = () =>{
-    navigate("/dashboard")
-  }
+  const handleClick = () => {
+    navigate("/dashboard");
+  };
 
   return (
     <>
-    <HeaderInternal titleBtn={'Voltar'} onClick={() => handleClick()}/>
+      <HeaderInternal titleBtn={"Voltar"} onClick={() => handleClick()} />
+
       <Container>
         <div className="nav">
           <div className="btn-nav">

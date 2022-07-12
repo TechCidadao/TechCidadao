@@ -31,9 +31,9 @@ export const MobileTutorial = () => {
     }
   };
 
-  const handleClick = () =>{
-    navigate("/dashboard")
-  }
+  const handleClick = () => {
+    navigate("/dashboard");
+  };
 
   return (
     <Container>
