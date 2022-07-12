@@ -27,13 +27,19 @@ export const UserPage = () => {
   const detectKeyDown = (e) => {
     if (e.key === "Escape") {
       navigate("/");
+      localStorage.clear();
     }
   };
+
+  const handleClick = () =>{
+    navigate("/")
+    localStorage.clear()
+  }
 
   return (
     <Container>
       <ContentContainer>
-        <HeaderInternal />
+        <HeaderInternal titleBtn={"sair"} onClick={() => handleClick()} />
         <ContainerMid>
           <Button
             title="Acessibilidade"

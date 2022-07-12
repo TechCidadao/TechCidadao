@@ -29,11 +29,14 @@ export const DesktopTutorial = () => {
       navigate("/dashboard");
     }
   };
+  const handleClick = () =>{
+    navigate("/dashboard")
+  }
 
   return (
     <Container>
       <ContentContainer>
-        <HeaderInternal />
+        <HeaderInternal titleBtn={"voltar"}  onClick={() => handleClick()}/>
         <ContainerMid>
           <div style={{ textAlignLast: "center" }}>
             <h1 tabIndex={0}>Sobre Computador:</h1>
