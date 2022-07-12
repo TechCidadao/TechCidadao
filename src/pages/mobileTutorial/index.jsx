@@ -23,7 +23,7 @@ export const MobileTutorial = () => {
 
   useEffect(() => {
     document.addEventListener("keydown", detectKeyDown, true);
-  }, []);
+  });
 
   const detectKeyDown = (e) => {
     if (e.key === "Escape") {
@@ -34,7 +34,7 @@ export const MobileTutorial = () => {
   return (
     <Container>
       <ContentContainer>
-        <HeaderInternal />
+        <HeaderInternal titleBtn={"voltar"} />
         <ContainerMid>
           <div style={{ textAlignLast: "center" }}>
             <h1 tabIndex={0}>Sobre Celular:</h1>

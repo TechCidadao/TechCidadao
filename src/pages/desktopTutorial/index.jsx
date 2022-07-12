@@ -33,7 +33,7 @@ export const DesktopTutorial = () => {
   return (
     <Container>
       <ContentContainer>
-        <HeaderInternal />
+        <HeaderInternal titleBtn={"voltar"} />
         <ContainerMid>
           <div style={{ textAlignLast: "center" }}>
             <h1 tabIndex={0}>Sobre Computador:</h1>

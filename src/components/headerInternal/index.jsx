@@ -9,7 +9,10 @@ import {
   ContainerStart,
 } from "./style";
 
-const HeaderInternal = () => {
+const HeaderInternal = ({ titleBtn }) => {
+  const username = localStorage.getItem("@TC:username");
+  const firstName = username.split(" ")[0];
+
   return (
     <>
       <ContainerHeader>
@@ -18,16 +21,16 @@ const HeaderInternal = () => {
         </ContainerStart>
         <ContainerMid>
           <img src={IconsHands} alt="Quatro mãos unidas no centro" />
-          <p tabIndex={"0"}>Bem vindo, fulano de tal</p>
+          <p tabIndex={"0"}>Bem vindo, {firstName}</p>
         </ContainerMid>
         <ContainerEnd>
-          <p tabIndex={"0"}>Aperte aqui para Voltar</p>
+          <p tabIndex={"0"}>Aperte aqui para {titleBtn}</p>
           <img
             tabIndex={0}
             src={ArrowRight}
-            alt="Seta para direita indicando o botão para voltar"
+            alt={`Seta para direita indicando o botão para ${titleBtn}`}
           />
-          <ButtonEnd tabIndex={"0"}>Voltar</ButtonEnd>
+          <ButtonEnd tabIndex={"0"}>{titleBtn}</ButtonEnd>
         </ContainerEnd>
       </ContainerHeader>
     </>

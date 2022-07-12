@@ -3,6 +3,8 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { TextField } from "@mui/material";
 import { yupResolver } from "@hookform/resolvers/yup";
+import TechCidadaoAPI from "services/api";
+import { toast } from "react-toastify";
 
 export const RegistrationForm = ({ setSelectType }) => {
   const schema = yup.object().shape({
@@ -23,7 +25,12 @@ export const RegistrationForm = ({ setSelectType }) => {
   });
 
   const onSubmitFunction = (data) => {
-    console.log(data);
+    TechCidadaoAPI.post(`/register`, data)
+      .then((res) => res)
+      .catch((error) => {
+        toast.error("Algo está errado, tente novamente mais tarde");
+      });
+
     setSelectType("success");
   };
 
@@ -33,28 +40,27 @@ export const RegistrationForm = ({ setSelectType }) => {
       <StyledForm onSubmit={handleSubmit(onSubmitFunction)}>
         <TextField
           {...register("email")}
-          label="Seu email"
           placeholder="Seu endereço eletronico"
           helperText={errors.email?.message}
           style={{ width: "90%" }}
         />
+
         <TextField
           {...register("password")}
-          label="Sua senha"
           placeholder="Coloque sua senha"
           helperText={errors.password?.message}
           style={{ width: "90%" }}
         />
+
         <TextField
           {...register("name")}
-          label="Seu nome"
           placeholder="Como quer ser chamado?"
           helperText={errors.name?.message}
           style={{ width: "90%" }}
         />
+
         <TextField
           {...register("age")}
-          label="Idade"
           placeholder="Qual a sua idade?"
           helperText={errors.age?.message}
           style={{ width: "90%" }}
