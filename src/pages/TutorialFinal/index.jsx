@@ -1,8 +1,10 @@
+import HeaderInternal from "components/headerInternal";
 import { Container } from "./styled";
 
 export const PageTutorial = () => {
   return (
     <>
+    <HeaderInternal titleBtn={'Voltar'}/>
       <Container>
         <div className="nav">
           <div className="btn-nav">
