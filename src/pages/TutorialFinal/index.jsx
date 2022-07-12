@@ -24,7 +24,7 @@ export const PageTutorial = () => {
 
   return (
     <>
-    <HeaderInternal titleBtn={'Voltar'}/>
+    <HeaderInternal titleBtn={'Voltar'} onClick={() => handleClick()}/>
       <Container>
         <div className="nav">
           <div className="btn-nav">
