@@ -21,7 +21,7 @@ export const ImgContainer = styled.div`
   }
 `;
 
-export const DivFooter = styled.div`
+export const DivFooter = styled.footer`
   display: inline-flex;
   flex-direction: column;
 `;

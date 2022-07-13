@@ -1,4 +1,4 @@
-import HeaderInternal from "components/headerInternal";
+import HeaderInternal from "../../components/headerInternal/index";
 import { Container } from "./styled";
 import { ContainerSubHeader } from "./styled";
 import { SubtitleBtnAcessibility } from "pages/userPage/style";
@@ -16,9 +16,7 @@ export const PageTutorial = () => {
   const { currentContent } = useContentInfo();
   const { title, description, link, extra } = currentContent;
   const { token } = useUserInfo();
-
   let { id } = useParams();
-
   const navigate = useNavigate();
 
   useEffect(() => {

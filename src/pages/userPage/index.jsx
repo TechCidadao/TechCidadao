@@ -16,10 +16,13 @@ import { Button } from "../../components/button/index";
 
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { Modal } from "components/Modal";
+import { useState } from "react";
 
 import { useUserInfo } from "providers/userInfo";
 
 export const UserPage = () => {
+  const [modalAccess, setModalAccess] = useState(false);
   const navigate = useNavigate();
 
   const { token } = useUserInfo();
@@ -57,37 +60,40 @@ export const UserPage = () => {
             BgColor="var(--white)"
             width="300px"
             hoverColor={"var(--black)"}
+            setModalAccess={setModalAccess}
           />
           <div className="arrowPosition">
             <img
-              tabIndex={0}
               className="arrowImg"
               src={ArrowAcessibility}
               alt="imagem da flecha apontando para o botão de acessibilidade"
             />
             <SubtitleBtnAcessibility>
-              <p tabIndex={0}>Aperte aqui para escolher sua necessidade</p>
+              <p tabIndex={"0"}>Aperte aqui para escolher sua necessidade</p>
             </SubtitleBtnAcessibility>
           </div>
         </ContainerMid>
         <TitleAcessibility>
-          <p tabIndex={0}>Aqui você escolhe o que quer aprender!</p>
-          <p tabIndex={0}>Aperte no celular ou no computador para começar</p>
+          <p tabIndex={"0"}>Aqui você escolhe o que quer aprender!</p>
+          <p tabIndex={"0"}>Aperte no celular ou no computador para começar</p>
         </TitleAcessibility>
         <ContainerCards>
           <CardsUser
             route={"/dashboard/desktop"}
+            tabIndex={"0"}
             photo={Computer}
             textAlt="Ícone clicável de um computador"
           />
           <CardsUser
             route={"/dashboard/mobile"}
+            tabIndex={"0"}
             photo={Cellphone}
             textAlt="Ícone clicável de um Celular"
           />
         </ContainerCards>
       </ContentContainer>
       <ContainerFooter />
+      {modalAccess && <Modal type="access" setModalAccess={setModalAccess} />}
     </Container>
   );
 };

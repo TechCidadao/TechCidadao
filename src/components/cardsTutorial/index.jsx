@@ -16,7 +16,7 @@ export const CardsTutorial = ({
     <>
       <ContainerCard id={id}>
         <ContainerImg imgHeight={imgHeight} imgWidth={imgWidth}>
-          <img tabIndex={0} src={photo} alt={textAlt} />
+          <img tabIndex={"0"} src={photo} alt={textAlt} />
         </ContainerImg>
         <TitleCard tabIndex={0}>{title}</TitleCard>
         <TextCard tabIndex={0}>{text}</TextCard>

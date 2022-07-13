@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.section`
   min-height: 100vh;
   background-color: var(--background);
   display: flex;
@@ -34,6 +34,10 @@ export const ContainerMid = styled.div`
   .arrowImg {
     width: 90px;
     margin-top: -55px;
+  }
+
+  h1{
+    font-size:2rem;
   }
 
   @media (min-width: 1024px) {
@@ -72,7 +76,7 @@ export const SubtitleBtnAcessibility = styled.div`
   }
 `;
 
-export const ContainerCards = styled.div`
+export const ContainerCards = styled.section`
   @media (min-width: 1024px) {
     width: 100%;
     display: flex;

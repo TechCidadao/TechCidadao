@@ -16,6 +16,8 @@ import IconMouse from "../../assets/MouseImg.png";
 import IconComputer from "../../assets/ComputerImg.png";
 import IconTeclado from "../../assets/TecladoImg.png";
 import ArrowTitle from "../../assets/ArrowTitle.png";
+import { useState } from "react";
+import { Modal } from "components/Modal";
 
 import TechCidadaoAPI from "services/api";
 import { useUserInfo } from "providers/userInfo";
@@ -24,6 +26,7 @@ import { useContentInfo } from "providers/content";
 import { toast } from "react-toastify";
 
 export const DesktopTutorial = () => {
+  const [modalAccess, setModalAccess] = useState(false);
   const navigate = useNavigate();
   const { token } = useUserInfo();
   const { getCurrentContent } = useContentInfo();
@@ -61,40 +64,38 @@ export const DesktopTutorial = () => {
         toast.error("Algo está errado, tente novamente mais tarde")
       );
   };
-
   return (
     <Container>
       <ContentContainer>
         <HeaderInternal titleBtn={"voltar"} onClick={() => handleClick()} />
         <ContainerMid>
           <div style={{ textAlignLast: "center" }}>
-            <h1 tabIndex={0}>Sobre Computador:</h1>
+            <h1 tabIndex={"0"}>Sobre Computador:</h1>
             <img
-              tabIndex={0}
               src={ArrowTitle}
               alt="Seta apontando para os cards de conteúdo"
             />
           </div>
-          <div>
+          <section>
             <Button
               title="Acessibilidade"
               color="var(--blue-sky)"
               BgColor="var(--white)"
               width="300px"
               hoverColor={"var(--black)"}
+              setModalAccess={setModalAccess}
             />
             <div className="arrowPosition">
               <img
-                tabIndex={0}
                 className="arrowImg"
                 src={ArrowAcessibility}
                 alt="imagem da flecha apontando para o botão de acessibilidade"
               />
               <SubtitleBtnAcessibility>
-                <p tabIndex={0}>Aperte aqui para escolher sua necessidade</p>
+                <p tabIndex={"0"}>Aperte aqui para escolher sua necessidade</p>
               </SubtitleBtnAcessibility>
             </div>
-          </div>
+          </section>
         </ContainerMid>
 
         <ContainerCards>
@@ -130,6 +131,7 @@ export const DesktopTutorial = () => {
           />
         </ContainerCards>
       </ContentContainer>
+      {modalAccess && <Modal type="access" setModalAccess={setModalAccess} />}
     </Container>
   );
 };
