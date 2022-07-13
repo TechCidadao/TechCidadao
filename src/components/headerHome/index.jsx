@@ -39,14 +39,15 @@ export const HeaderHome = () => {
           />
 
           <div className="arrowPosition">
-            <h1 tabIndex={"0"}>
+            <p>
+              <small tabIndex={"0"}>
               Aperte aqui
               <br />
               para escolher <br />
               sua necessidade
-            </h1>
+              </small>
+            </p>
             <img
-              tabIndex={"0"}
               src={ArrowAcessibilidade}
               alt="Flecha apontando para o texto de Acessibilidade"
             />
@@ -61,11 +62,12 @@ export const HeaderHome = () => {
         <HomeHeaderDownArrow />
       </HomeHeaderArrowContainer>
       <MidArrowContainer BgColor="var(--blue-sky)">
-        <h1 tabIndex={"0"}>
+        <h1 tabIndex={"0"}>Qual o objetivo deste site?</h1>
+        <p tabIndex={"0"}>
           Esse site foi pensado para você! Isso mesmo, você que deseja aprender
           mais sobre tecnologia mas não acha os recursos necessários ou tem
           dificuldade em encontrar um site com acessibilidade!
-        </h1>
+        </p>
       </MidArrowContainer>
       <HomeHeaderArrowContainer
         BgColor="var(--white)"

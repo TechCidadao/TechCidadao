@@ -15,7 +15,7 @@ export const Footer = () => {
         />
       </ImgContainer>
 
-      <DivFooter>
+      <DivFooter role="contentinfo">
         <HomeHeaderArrowContainer
           BgColor="var(--blue-marine)"
           transitionColor="var(--blue-marine)"

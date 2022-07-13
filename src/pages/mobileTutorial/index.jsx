@@ -31,23 +31,22 @@ export const MobileTutorial = () => {
     }
   };
 
-  const handleClick = () =>{
-    navigate("/dashboard")
-  }
+  const handleClick = () => {
+    navigate("/dashboard");
+  };
 
   return (
     <Container>
       <ContentContainer>
         <HeaderInternal titleBtn={"voltar"} onClick={() => handleClick()} />
         <ContainerMid>
-          <div style={{ textAlignLast: "center" }}>
-            <h1 tabIndex={0}>Sobre Celular:</h1>
+          <section style={{ textAlignLast: "center" }}>
+            <h1 tabIndex={"0"}>Sobre Celular:</h1>
             <img
-              tabIndex={0}
               src={ArrowTitle}
               alt="Seta apontando para os cards de conteúdo"
             />
-          </div>
+          </section>
           <div>
             <Button
               title="Acessibilidade"
@@ -58,13 +57,12 @@ export const MobileTutorial = () => {
             />
             <div className="arrowPosition">
               <img
-                tabIndex={0}
                 className="arrowImg"
                 src={ArrowAcessibility}
                 alt="imagem da flecha apontando para o botão de acessibilidade"
               />
               <SubtitleBtnAcessibility>
-                <p tabIndex={0}>Aperte aqui para escolher sua necessidade</p>
+                <p tabIndex={"0"}>Aperte aqui para escolher sua necessidade</p>
               </SubtitleBtnAcessibility>
             </div>
           </div>
