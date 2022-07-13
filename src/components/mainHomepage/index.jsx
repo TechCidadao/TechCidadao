@@ -23,8 +23,7 @@ export const MainHome = () => {
               setModalLoginForm={setModalLoginForm}
             />
             <h1 tabIndex={"0"} onClick={() => setModalLogin(true)}>
-              O que é Cadastro e porque cadastrar? Aperte nessas letras para
-              saber
+              O que é Entrar e porque entrar? Aperte nessas letras para saber
             </h1>
           </SectionBtn>
           <SectionBtn>
@@ -37,7 +36,8 @@ export const MainHome = () => {
               setModalRegisForm={setModalRegisForm}
             />
             <h1 tabIndex={"0"} onClick={() => setModalRegis(true)}>
-              O que é Entrar e porque entrar? Aperte nessas letras para saber
+              O que é Cadastro e porque cadastrar? Aperte nessas letras para
+              saber
             </h1>
           </SectionBtn>
         </ContainerBtn>

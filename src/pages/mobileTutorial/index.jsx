@@ -17,8 +17,11 @@ import IconSocialMedia from "../../assets/iconSocialMedia.png";
 import IconPeople from "../../assets/iconMySpace.png";
 import ArrowTitle from "../../assets/ArrowTitle.png";
 import IconCell from "../../assets/iconCell.png";
+import { Modal } from "components/Modal";
+import { useState } from "react";
 
 export const MobileTutorial = () => {
+  const [modalAccess, setModalAccess] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -31,9 +34,9 @@ export const MobileTutorial = () => {
     }
   };
 
-  const handleClick = () =>{
-    navigate("/dashboard")
-  }
+  const handleClick = () => {
+    navigate("/dashboard");
+  };
 
   return (
     <Container>
@@ -55,6 +58,7 @@ export const MobileTutorial = () => {
               BgColor="var(--white)"
               width="300px"
               hoverColor={"var(--black)"}
+              setModalAccess={setModalAccess}
             />
             <div className="arrowPosition">
               <img
@@ -101,6 +105,7 @@ export const MobileTutorial = () => {
           />
         </ContainerCards>
       </ContentContainer>
+      {modalAccess && <Modal type="access" setModalAccess={setModalAccess} />}
     </Container>
   );
 };
