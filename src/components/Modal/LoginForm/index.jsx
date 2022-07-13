@@ -1,13 +1,18 @@
-import { FlexBox, StyledForm, ThemeButton, ThemeText } from "../style";
+import { Container, StyledFormLogin, ThemeButton, ThemeText } from "../style";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
-import { TextField } from "@mui/material";
+import { TextField, IconButton } from "@mui/material";
 import { yupResolver } from "@hookform/resolvers/yup";
 import TechCidadaoAPI from "services/api";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useUserInfo } from "providers/userInfo";
+import InputAdornment from "@mui/material/InputAdornment";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import { useState } from "react";
 export const LoginForm = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const { getUserInfo } = useUserInfo();
   let navigate = useNavigate();
 
@@ -38,25 +43,35 @@ export const LoginForm = () => {
   };
 
   return (
-    <FlexBox>
+    <Container>
       <ThemeText>Preencha para entrar, se você já tem cadastro</ThemeText>
-      <StyledForm onSubmit={handleSubmit(onSubmitFunction)}>
+      <StyledFormLogin onSubmit={handleSubmit(onSubmitFunction)}>
+        <label>E-mail</label>
         <TextField
           {...register("email")}
-          label="Email"
           placeholder="Seu endereço eletronico"
-          helperText={errors.email?.message}
           style={{ width: "90%" }}
         />
+        <p>{errors.email?.message}</p>
+        <label>Senha</label>
         <TextField
           {...register("password")}
-          label="Senha"
           placeholder="Coloque sua senha"
-          helperText={errors.password?.message}
           style={{ width: "90%" }}
+          type={showPassword ? "text" : "password"}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton onClick={() => setShowPassword(!showPassword)}>
+                  {showPassword ? <Visibility /> : <VisibilityOff />}
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
         />
+        <p>{errors.password?.message}</p>
         <ThemeButton type="submit">Aperte para entrar</ThemeButton>
-      </StyledForm>
-    </FlexBox>
+      </StyledFormLogin>
+    </Container>
   );
 };

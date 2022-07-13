@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { FlexBox, ThemeButton } from "../style";
+import { useState } from "react";
+import { ButtonAcess, Container } from "../style";
 
 export const AccessButtons = () => {
   const [gray, setGray] = useState(false);
@@ -30,11 +30,10 @@ export const AccessButtons = () => {
   }
 
   return (
-    <FlexBox>
-      <ThemeButton onClick={() => increseFont()}>Aumentar texto</ThemeButton>
-      <ThemeButton onClick={() => decreseFont()}>Diminuir Texto</ThemeButton>
-      <ThemeButton>Contraste</ThemeButton>
-      <ThemeButton onClick={() => grayScale()}>Tons de cinza</ThemeButton>
-    </FlexBox>
+    <Container>
+      <ButtonAcess onClick={() => increseFont()}>Aumentar Texto</ButtonAcess>
+      <ButtonAcess onClick={() => decreseFont()}>Diminuir Texto</ButtonAcess>
+      <ButtonAcess onClick={() => grayScale()}>Monocromático</ButtonAcess>
+    </Container>
   );
 };
