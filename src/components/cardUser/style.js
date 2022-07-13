@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.section`
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
 `;
@@ -21,9 +22,9 @@ export const ContainerCard = styled.button`
     width: 210px;
     height: 210px;
   }
-  &:hover,
-  &:active,
-  &:focus {
-    border: 5px solid var(--black);
-  }
 `;
+export const DescriptionButton = styled.p`
+  small{
+    color: white;
+    font-size: 10px;
+  }`

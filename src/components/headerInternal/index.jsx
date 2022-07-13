@@ -8,29 +8,31 @@ import {
   ContainerMid,
   ContainerStart,
 } from "./style";
+import { useUserInfo } from "providers/userInfo";
 
 const HeaderInternal = ({ titleBtn, onClick }) => {
-  const username = localStorage.getItem("@TC:username");
-  const firstName = username.split(" ")[0];
+  const { userName } = useUserInfo();
 
+  const firstName = userName.split(" ")[0];
   return (
     <>
       <ContainerHeader>
-        <ContainerStart>
-          <img tabIndex={0} src={UserLogo} alt="Ícone do Tech Cidadão" />
+        <ContainerStart role="img">
+          <img tabIndex={"0"} src={UserLogo} alt="Ícone do Tech Cidadão" />
         </ContainerStart>
-        <ContainerMid>
+        <ContainerMid role="img">
           <img src={IconsHands} alt="Quatro mãos unidas no centro" />
           <p tabIndex={"0"}>Bem vindo, {firstName}</p>
         </ContainerMid>
-        <ContainerEnd>
+        <ContainerEnd role="img">
           <p tabIndex={"0"}>Aperte aqui para {titleBtn}</p>
           <img
-            tabIndex={0}
             src={ArrowRight}
             alt={`Seta para direita indicando o botão para ${titleBtn}`}
           />
-          <ButtonEnd tabIndex={"0"} onClick={onClick}>{titleBtn}</ButtonEnd>
+          <ButtonEnd tabIndex={"0"} onClick={onClick}>
+            {titleBtn}
+          </ButtonEnd>
         </ContainerEnd>
       </ContainerHeader>
     </>

@@ -6,8 +6,9 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import TechCidadaoAPI from "services/api";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-
+import { useUserInfo } from "providers/userInfo";
 export const LoginForm = () => {
+  const { getUserInfo } = useUserInfo();
   let navigate = useNavigate();
 
   const schema = yup.object().shape({
@@ -28,8 +29,7 @@ export const LoginForm = () => {
   const onSubmitFunction = (data) => {
     TechCidadaoAPI.post(`/login`, data)
       .then((res) => {
-        localStorage.setItem("@TC:token", res.data.accessToken);
-        localStorage.setItem("@TC:username", res.data.user.name);
+        getUserInfo(res.data.accessToken, res.data.user.name);
         navigate("/dashboard");
       })
       .catch((error) => {

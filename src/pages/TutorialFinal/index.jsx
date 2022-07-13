@@ -1,15 +1,30 @@
-import HeaderInternal from "components/headerInternal";
+import HeaderInternal from "../../components/headerInternal/index";
 import { Container } from "./styled";
+import { ContainerSubHeader } from "./styled";
+import { SubtitleBtnAcessibility } from "pages/userPage/style";
+import ArrowAcessibility from "../../assets/ArrowAcessibilidade.svg";
+import StudyngImg from "../../assets/studyingImage.jpg";
 
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { useContentInfo } from "providers/content";
+import { useUserInfo } from "providers/userInfo";
+import { Button } from "components/button";
 
 export const PageTutorial = () => {
-
+  const { currentContent } = useContentInfo();
+  const { title, description, link, extra } = currentContent;
+  const { token } = useUserInfo();
   const navigate = useNavigate();
 
   useEffect(() => {
     document.addEventListener("keydown", detectKeyDown, true);
+  });
+
+  useEffect(() => {
+    if (token === "") {
+      return navigate("/notFound");
+    }
   });
 
   const detectKeyDown = (e) => {
@@ -18,49 +33,92 @@ export const PageTutorial = () => {
     }
   };
 
-  const handleClick = () =>{
-    navigate("/dashboard")
-  }
+  const handleClick = () => {
+    navigate("/dashboard");
+  };
 
   return (
     <>
-    <HeaderInternal titleBtn={'Voltar'} onClick={() => handleClick()}/>
+      <HeaderInternal titleBtn={"Voltar"} onClick={() => handleClick()} />
       <Container>
-        <div className="nav">
-          <div className="btn-nav">
-            <div className="container-btn">
-              <button>Acessibilidade</button>
-            </div>
-            <div className="btn-text">
-              <p>Aperte aqui para escolher sua acessibilidade</p>
+        <ContainerSubHeader>
+          <h1>{title}</h1>
+          <div>
+            <Button
+              title="Acessibilidade"
+              color="var(--blue-sky)"
+              BgColor="var(--white)"
+              width="300px"
+              hoverColor={"var(--black)"}
+            />
+            <div className="arrowPosition">
+              <img
+                tabIndex={0}
+                className="arrowImg"
+                src={ArrowAcessibility}
+                alt="imagem da flecha apontando para o botão de acessibilidade"
+              />
+              <SubtitleBtnAcessibility>
+                <p tabIndex={0}>Aperte aqui para escolher sua necessidade</p>
+              </SubtitleBtnAcessibility>
             </div>
           </div>
-          <div className="div-titulo">
-            <h3>Conteudo tal: sobre tal assunto</h3>
-          </div>
-        </div>
+        </ContainerSubHeader>
 
         <div className="main">
           <div className="container-video">
-            <div className="div-video">
-              <video controls></video>
-            </div>
+            {link.includes("youtube") ? (
+              <div className="div-video" style={{ height: "50vh" }}>
+                <iframe
+                  width={"100%"}
+                  height={"100%"}
+                  src={link}
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            ) : (
+              <div className="div-video">
+                <img
+                  className="imgContent"
+                  src={link}
+                  alt={"imagem relacionada ao conteudo"}
+                />
+              </div>
+            )}
             <div className="div-text">
-              <h3>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua
-              </h3>
+              <p className="description-text">{description}</p>
             </div>
           </div>
           <div className="info-container">
             <div>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua
-              </p>
+              {extra !== "" ? (
+                <a href={extra}>Conteudo Complementar! Clique aqui</a>
+              ) : (
+                <>
+                  <p className="description-text">
+                    Sem conteúdo extra por hoje!
+                  </p>
+                  <img
+                    style={{ width: "100%" }}
+                    src={StudyngImg}
+                    alt="imagem de pessoas estudando"
+                  />
+                </>
+              )}
             </div>
           </div>
         </div>
+        <button
+          className="backToTop"
+          onClick={() => {
+            window.scrollTo(0, 0);
+          }}
+        >
+          Voltar ao Topo
+        </button>
       </Container>
     </>
   );

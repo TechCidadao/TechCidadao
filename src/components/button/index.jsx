@@ -28,6 +28,8 @@ export const Button = ({
   return (
     <>
       <GlobalButton
+        aria-describedby={"accessibility-button-description"}
+        tabIndex={"0"}
         hoverColor={hoverColor}
         width={width}
         color={color}

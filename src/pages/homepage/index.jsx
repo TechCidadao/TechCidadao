@@ -8,6 +8,14 @@ export const HomePage = () => {
       <HeaderHome />
       <MainHome />
       <Footer />
+      <button
+        className="backToTop"
+        onClick={() => {
+          window.scrollTo(0, 0);
+        }}
+      >
+        Voltar ao Topo
+      </button>
     </>
   );
 };
