@@ -9,14 +9,12 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useContentInfo } from "providers/content";
 import { useUserInfo } from "providers/userInfo";
-import { useParams } from "react-router-dom";
 import { Button } from "components/button";
 
 export const PageTutorial = () => {
   const { currentContent } = useContentInfo();
   const { title, description, link, extra } = currentContent;
   const { token } = useUserInfo();
-  let { id } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
