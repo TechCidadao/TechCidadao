@@ -17,11 +17,21 @@ import { Button } from "../../components/button/index";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
+import { useUserInfo } from "providers/userInfo";
+
 export const UserPage = () => {
   const navigate = useNavigate();
 
+  const { token } = useUserInfo();
+
   useEffect(() => {
     document.addEventListener("keydown", detectKeyDown, true);
+  });
+
+  useEffect(() => {
+    if (token === "") {
+      return navigate("/notFound");
+    }
   });
 
   const detectKeyDown = (e) => {
@@ -31,10 +41,10 @@ export const UserPage = () => {
     }
   };
 
-  const handleClick = () =>{
-    navigate("/")
-    localStorage.clear()
-  }
+  const handleClick = () => {
+    navigate("/");
+    localStorage.clear();
+  };
 
   return (
     <Container>
@@ -66,10 +76,15 @@ export const UserPage = () => {
         </TitleAcessibility>
         <ContainerCards>
           <CardsUser
+            route={"/dashboard/desktop"}
             photo={Computer}
             textAlt="Ícone clicável de um computador"
           />
-          <CardsUser photo={Cellphone} textAlt="Ícone clicável de um Celular" />
+          <CardsUser
+            route={"/dashboard/mobile"}
+            photo={Cellphone}
+            textAlt="Ícone clicável de um Celular"
+          />
         </ContainerCards>
       </ContentContainer>
       <ContainerFooter />
