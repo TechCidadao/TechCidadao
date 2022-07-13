@@ -19,12 +19,22 @@ import { useEffect } from "react";
 import { Modal } from "components/Modal";
 import { useState } from "react";
 
+import { useUserInfo } from "providers/userInfo";
+
 export const UserPage = () => {
   const [modalAccess, setModalAccess] = useState(false);
   const navigate = useNavigate();
 
+  const { token } = useUserInfo();
+
   useEffect(() => {
     document.addEventListener("keydown", detectKeyDown, true);
+  });
+
+  useEffect(() => {
+    if (token === "") {
+      return navigate("/notFound");
+    }
   });
 
   const detectKeyDown = (e) => {
@@ -69,11 +79,13 @@ export const UserPage = () => {
         </TitleAcessibility>
         <ContainerCards>
           <CardsUser
+            route={"/dashboard/desktop"}
             tabIndex={"0"}
             photo={Computer}
             textAlt="Ícone clicável de um computador"
           />
           <CardsUser
+            route={"/dashboard/mobile"}
             tabIndex={"0"}
             photo={Cellphone}
             textAlt="Ícone clicável de um Celular"

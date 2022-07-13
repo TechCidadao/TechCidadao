@@ -8,11 +8,12 @@ import {
   ContainerMid,
   ContainerStart,
 } from "./style";
+import { useUserInfo } from "providers/userInfo";
 
 const HeaderInternal = ({ titleBtn, onClick }) => {
-  const username = localStorage.getItem("@TC:username");
-  const firstName = username.split(" ")[0];
+  const { userName } = useUserInfo();
 
+  const firstName = userName.split(" ")[0];
   return (
     <>
       <ContainerHeader>

@@ -1,14 +1,19 @@
-import { Container, ContainerCard, DescriptionButton } from "./style";
+import { ContainerCard } from "./style";
+import { useNavigate } from "react-router-dom";
 
-export const CardsUser = ({ photo, textAlt }) => {
+export const CardsUser = ({ photo, textAlt, route }) => {
+  const navigate = useNavigate();
+
+  const handleClick = (route) => {
+    navigate(route);
+
+    localStorage.clear();
+  };
   return (
-    <Container>
-      <ContainerCard>
+    <>
+      <ContainerCard onClick={() => handleClick(route)}>
         <img src={photo} alt={textAlt} />
       </ContainerCard>
-      <DescriptionButton id="access-button">
-        <small tabIndex={"0"}>Ícone de acesso para o conteúdo</small>
-      </DescriptionButton>
-    </Container>
+    </>
   );
 };

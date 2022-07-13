@@ -1,14 +1,30 @@
 import HeaderInternal from "../../components/headerInternal/index";
 import { Container } from "./styled";
+import { ContainerSubHeader } from "./styled";
+import { SubtitleBtnAcessibility } from "pages/userPage/style";
+import ArrowAcessibility from "../../assets/ArrowAcessibilidade.svg";
+import StudyngImg from "../../assets/studyingImage.jpg";
 
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { useContentInfo } from "providers/content";
+import { useUserInfo } from "providers/userInfo";
+import { Button } from "components/button";
 
 export const PageTutorial = () => {
+  const { currentContent } = useContentInfo();
+  const { title, description, link, extra } = currentContent;
+  const { token } = useUserInfo();
   const navigate = useNavigate();
 
   useEffect(() => {
     document.addEventListener("keydown", detectKeyDown, true);
+  });
+
+  useEffect(() => {
+    if (token === "") {
+      return navigate("/notFound");
+    }
   });
 
   const detectKeyDown = (e) => {
@@ -16,6 +32,7 @@ export const PageTutorial = () => {
       navigate("/dashboard");
     }
   };
+
   const handleClick = () => {
     navigate("/dashboard");
   };
@@ -24,41 +41,84 @@ export const PageTutorial = () => {
     <>
       <HeaderInternal titleBtn={"Voltar"} onClick={() => handleClick()} />
       <Container>
-        <nav className="nav">
-          <section className="btn-nav">
-            <div className="container-btn">
-              <button tabIndex={"0"}>Acessibilidade</button>
+        <ContainerSubHeader>
+          <h1>{title}</h1>
+          <div>
+            <Button
+              title="Acessibilidade"
+              color="var(--blue-sky)"
+              BgColor="var(--white)"
+              width="300px"
+              hoverColor={"var(--black)"}
+            />
+            <div className="arrowPosition">
+              <img
+                tabIndex={0}
+                className="arrowImg"
+                src={ArrowAcessibility}
+                alt="imagem da flecha apontando para o botão de acessibilidade"
+              />
+              <SubtitleBtnAcessibility>
+                <p tabIndex={0}>Aperte aqui para escolher sua necessidade</p>
+              </SubtitleBtnAcessibility>
             </div>
-            <div className="btn-text">
-              <p tabIndex={"0"}>Aperte aqui para escolher sua acessibilidade</p>
-            </div>
-          </section>
-          <div className="div-titulo">
-            <h1 tabIndex={"0"}>Conteudo tal: sobre tal assunto</h1>
           </div>
-        </nav>
+        </ContainerSubHeader>
 
-        <main className="main">
-          <section className="container-video">
-            <div className="div-video">
-              <video controls></video>
-            </div>
+        <div className="main">
+          <div className="container-video">
+            {link.includes("youtube") ? (
+              <div className="div-video" style={{ height: "50vh" }}>
+                <iframe
+                  width={"100%"}
+                  height={"100%"}
+                  src={link}
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            ) : (
+              <div className="div-video">
+                <img
+                  className="imgContent"
+                  src={link}
+                  alt={"imagem relacionada ao conteudo"}
+                />
+              </div>
+            )}
             <div className="div-text">
-              <p tabIndex={"0"}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua
-              </p>
+              <p className="description-text">{description}</p>
             </div>
-          </section>
-          <section className="info-container">
+          </div>
+          <div className="info-container">
             <div>
-              <p tabIndex={"0"}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua
-              </p>
+              {extra !== "" ? (
+                <a href={extra}>Conteudo Complementar! Clique aqui</a>
+              ) : (
+                <>
+                  <p className="description-text">
+                    Sem conteúdo extra por hoje!
+                  </p>
+                  <img
+                    style={{ width: "100%" }}
+                    src={StudyngImg}
+                    alt="imagem de pessoas estudando"
+                  />
+                </>
+              )}
             </div>
-          </section>
-        </main>
+          </div>
+        </div>
+        <button
+          className="backToTop"
+          onClick={() => {
+            window.scrollTo(0, 0);
+          }}
+        >
+          Voltar ao Topo
+        </button>
       </Container>
     </>
   );

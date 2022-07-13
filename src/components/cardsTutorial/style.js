@@ -16,11 +16,30 @@ export const ContainerCard = styled.section`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
   margin: 15px 0px;
-  cursor: pointer;
 
   button {
+    width: 90%;
     margin: 10px;
     padding: 10px;
+    box-shadow: 2px 6px 2px -1px #0000005c;
+    border-radius: 8px;
+    background-color: var(--blue-sky);
+    color: var(--white);
+    border: none;
+  }
+  img {
+    width: 40px;
+  }
+
+  p {
+    padding: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 600;
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    font-size: 30px;
   }
 
   p {
@@ -33,13 +52,15 @@ export const ContainerCard = styled.section`
     border: 5px solid var(--black);
   }
 
+  button:hover,
+  button:active,
+  button:focus {
+    border: 5px solid var(--black);
+  }
+
   @media (min-width: 600px) {
     width: 300px;
     padding: 5px;
-
-    button {
-      width: 90%;
-    }
   }
 `;
 //talvez precisa mudar pra celular

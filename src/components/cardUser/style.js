@@ -22,11 +22,6 @@ export const ContainerCard = styled.button`
     width: 210px;
     height: 210px;
   }
-  &:hover,
-  &:active,
-  &:focus {
-    border: 5px solid var(--black);
-  }
 `;
 export const DescriptionButton = styled.p`
   small{
