@@ -6,6 +6,10 @@ export const Container = styled.div`
   height: 100%;
   background-color: #364462;
 
+  p {
+    margin-left: 10px;
+  }
+
   .container-video {
     margin-bottom: 20px;
   }
@@ -57,7 +61,6 @@ export const Container = styled.div`
     }
     .info-container {
       width: 90vw;
-      height: 10rem;
       margin-top: 1rem;
       margin-bottom: 2rem;
       background-color: white;
@@ -95,7 +98,6 @@ export const Container = styled.div`
     }
     .info-container {
       width: 90vw;
-      height: 10rem;
       margin-top: 1rem;
       margin-bottom: 2rem;
       background-color: white;
@@ -134,11 +136,10 @@ export const Container = styled.div`
 
     .info-container {
       width: 25vw;
-      height: 20rem;
       background-color: white;
       border-radius: 8px;
+      height: 65vh;
       div {
-        width: 90%;
         padding-top: 1rem;
         margin: 0 auto;
       }
@@ -149,6 +150,22 @@ export const Container = styled.div`
       display: flex;
       flex-direction: row;
       justify-content: space-around;
+    }
+
+    .studyingImg {
+      width: 100%;
+      height: 100%;
+    }
+
+    @media (min-width: 1024) {
+      studyingImg {
+        width: 25vw;
+        height: 20rem;
+      }
+
+      .info-container {
+        height: 65vh;
+      }
     }
   }
 `;

@@ -99,14 +99,16 @@ export const PageTutorial = () => {
           <div className="info-container">
             <div>
               {extra !== "" ? (
-                <a href={extra}>Conteudo Complementar! Clique aqui</a>
+                <a href={extra} target={"_blank"} rel={"noreferrer"}>
+                  Conteudo Complementar! Clique aqui
+                </a>
               ) : (
                 <>
                   <p className="description-text">
                     Sem conteúdo extra por hoje!
                   </p>
                   <img
-                    style={{ width: "100%" }}
+                    style={{ width: "100%", height: "100%" }}
                     src={StudyngImg}
                     alt="imagem de pessoas estudando"
                   />
