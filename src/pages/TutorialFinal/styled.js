@@ -6,20 +6,34 @@ export const Container = styled.div`
   height: 100%;
   background-color: #364462;
 
-  button {
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    border: none;
-    font-size: 36px;
-    font-weight: bold;
-    color: #365da7;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-  
   video {
     width: 100%;
     height: 100%;
+  }
+
+  .container-video {
+    margin-bottom: 20px;
+  }
+  a {
+    font-size: 30px;
+  }
+
+  .description-text {
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+
+  .div-text {
+    height: auto;
+  }
+
+  .div-video {
+    height: auto;
+  }
+
+  .imgContent {
+    width: 100%;
   }
 
   @media screen and (max-width: 760px) {
@@ -27,38 +41,6 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
 
-    .nav {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
-      align-items: center;
-
-      p {
-        color: white;
-        font-size: 18px;
-        font-weight: 900;
-      }
-      .btn-nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .container-btn {
-        width: 95vw;
-        height: 8vh;
-        background-color: white;
-        border: 1px solid black;
-        border-radius: 8px;
-        margin-top: 1rem;
-      }
-
-      .div-titulo {
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-        color: white;
-        font-size: 18px;
-      }
-    }
     .container-video {
       width: 90vw;
       display: flex;
@@ -69,14 +51,13 @@ export const Container = styled.div`
 
       .div-video {
         width: 80vw;
-        height: 35vh;
+
         margin-top: 1rem;
         margin-bottom: 1rem;
       }
 
       .div-text {
         width: 80vw;
-        height: 12.5rem;
       }
     }
     .info-container {
@@ -98,43 +79,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    .nav {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      align-items: center;
 
-      p {
-        color: white;
-        font-size: 18px;
-        font-weight: 900;
-      }
-      .btn-nav {
-        display: flex;
-        align-items: center;
-        width: 90vw;
-        flex-direction: row-reverse;
-        justify-content: space-between;
-      }
-      .btn-text {
-        width: 10rem;
-      }
-      .container-btn {
-        width: 45vw;
-        height: 8vh;
-        background-color: white;
-        border: 1px solid black;
-        border-radius: 8px;
-        margin-top: 1rem;
-      }
-
-      .div-titulo {
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-        color: white;
-        font-size: 18px;
-      }
-    }
     .container-video {
       width: 90vw;
       display: flex;
@@ -145,14 +90,12 @@ export const Container = styled.div`
 
       .div-video {
         width: 80vw;
-        height: 32vh;
         margin-top: 2rem;
         margin-bottom: 1rem;
       }
 
       .div-text {
         width: 80vw;
-        height: 15vh;
       }
     }
     .info-container {
@@ -175,47 +118,6 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
 
-    .nav {
-      width: 97vw;
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: row-reverse;
-      justify-content: space-around;
-
-      p {
-        color: white;
-        font-size: 16px;
-        font-weight: 900;
-      }
-
-      .btn-nav {
-        width: 42vw;
-        display: flex;
-        flex-direction: row-reverse;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .btn-text {
-        width: 10rem;
-      }
-      .container-btn {
-        width: 25vw;
-        margin-top: 2rem;
-        margin-left: 1rem;
-        height: 10vh;
-        background-color: white;
-        border: 1px solid black;
-        border-radius: 8px;
-        margin-top: 1rem;
-      }
-
-      .div-titulo {
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-        color: white;
-        font-size: 18px;
-      }
-    }
     .container-video {
       width: 50vw;
       display: flex;
@@ -226,19 +128,17 @@ export const Container = styled.div`
 
       .div-video {
         width: 45vw;
-        height: 35vh;
         margin-top: 2rem;
         margin-bottom: 1rem;
       }
 
       .div-text {
         width: 45vw;
-        height: 15vh;
       }
     }
 
     .info-container {
-      width: 20vw;
+      width: 25vw;
       height: 20rem;
       background-color: white;
       border-radius: 8px;
@@ -255,6 +155,38 @@ export const Container = styled.div`
       flex-direction: row;
       justify-content: space-around;
     }
+  }
+`;
 
+export const ContainerSubHeader = styled.div`
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+  text-align: -webkit-center;
+  margin: 50px;
+  gap: 40px;
+
+  .arrowImg {
+    width: 90px;
+    margin-top: -55px;
+  }
+
+  .arrowPosition {
+    display: flex;
+    width: 250px;
+    flex-direction: row-reverse;
+  }
+
+  h1 {
+    text-align: left;
+    color: var(--white);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding-left: 25px;
+  }
+  @media (min-width: 600px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0;
   }
 `;

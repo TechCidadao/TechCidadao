@@ -27,11 +27,6 @@ export const GlobalButton = styled.button.attrs((props) => ({
     text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
     font-size: 30px;
   }
-  &:hover,
-  &:focus,
-  &:active {
-    border: 4px solid ${(props) => props.hoverColor};
-  }
 
   @media (min-width: 600px) {
     width: 320px;
