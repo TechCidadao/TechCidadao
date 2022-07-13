@@ -16,7 +16,6 @@ export const PageTutorial = () => {
       navigate("/dashboard");
     }
   };
-
   const handleClick = () => {
     navigate("/dashboard");
   };
@@ -24,7 +23,6 @@ export const PageTutorial = () => {
   return (
     <>
       <HeaderInternal titleBtn={"Voltar"} onClick={() => handleClick()} />
-
       <Container>
         <nav className="nav">
           <section className="btn-nav">

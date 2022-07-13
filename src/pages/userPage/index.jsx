@@ -16,8 +16,11 @@ import { Button } from "../../components/button/index";
 
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { Modal } from "components/Modal";
+import { useState } from "react";
 
 export const UserPage = () => {
+  const [modalAccess, setModalAccess] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -47,6 +50,7 @@ export const UserPage = () => {
             BgColor="var(--white)"
             width="300px"
             hoverColor={"var(--black)"}
+            setModalAccess={setModalAccess}
           />
           <div className="arrowPosition">
             <img
@@ -69,10 +73,15 @@ export const UserPage = () => {
             photo={Computer}
             textAlt="Ícone clicável de um computador"
           />
-          <CardsUser tabIndex={"0"} photo={Cellphone} textAlt="Ícone clicável de um Celular" />
+          <CardsUser
+            tabIndex={"0"}
+            photo={Cellphone}
+            textAlt="Ícone clicável de um Celular"
+          />
         </ContainerCards>
       </ContentContainer>
       <ContainerFooter />
+      {modalAccess && <Modal type="access" setModalAccess={setModalAccess} />}
     </Container>
   );
 };

@@ -3,18 +3,27 @@ import styled from "styled-components";
 export const ModalBg = styled.div`
   width: 100vw;
   height: 100vh;
-  padding: 0 10%;
+  padding: 10%;
   background-color: rgba(0, 0, 0, 0.85);
-  z-index: 9999;
+  z-index: 200;
 
   position: fixed;
   left: 0;
   top: 0;
+  right: 0;
+  bottom: 0;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (min-width: 600px) {
+    padding: 15%;
+  }
+  @media (min-width: 1024px) {
+    padding: 25%;
+  }
 `;
 
 export const HeadModal = styled.div`
@@ -25,11 +34,13 @@ export const HeadModal = styled.div`
   background-color: var(--primary-background);
   display: flex;
   align-items: center;
+  justify-content: space-between;
 `;
 
 export const BodyModal = styled.div`
   width: 100%;
-  min-height: 256px;
+  height: 100%;
+  min-height: 300px;
   padding: 5%;
 
   background-color: var(--background-input);
@@ -37,10 +48,10 @@ export const BodyModal = styled.div`
   align-items: center;
 
   @media (min-width: 600px) {
-    min-height: 384px;
+    min-height: 260px;
   }
   @media (min-width: 1024px) {
-    min-height: 576px;
+    min-height: 380px;
   }
 `;
 
@@ -114,12 +125,21 @@ export const SuccessBox = styled.div`
 export const FlexBox = styled.div`
   width: 100%;
   height: 100%;
+  min-height: 200px;
+  margin-top: 5%;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   gap: 5px;
+
+  @media (min-width: 600px) {
+    min-height: 260px;
+  }
+  @media (min-width: 1024px) {
+    min-height: 380px;
+  }
 `;
 
 export const StyledForm = styled.form`

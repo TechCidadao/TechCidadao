@@ -9,9 +9,7 @@ import {
   ContainerStart,
 } from "./style";
 
-
 const HeaderInternal = ({ titleBtn, onClick }) => {
-
   const username = localStorage.getItem("@TC:username");
   const firstName = username.split(" ")[0];
 
@@ -31,7 +29,9 @@ const HeaderInternal = ({ titleBtn, onClick }) => {
             src={ArrowRight}
             alt={`Seta para direita indicando o botão para ${titleBtn}`}
           />
-          <ButtonEnd tabIndex={"0"} onClick={onClick}>{titleBtn}</ButtonEnd>
+          <ButtonEnd tabIndex={"0"} onClick={onClick}>
+            {titleBtn}
+          </ButtonEnd>
         </ContainerEnd>
       </ContainerHeader>
     </>

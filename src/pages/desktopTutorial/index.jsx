@@ -16,8 +16,11 @@ import IconMouse from "../../assets/MouseImg.png";
 import IconComputer from "../../assets/ComputerImg.png";
 import IconTeclado from "../../assets/TecladoImg.png";
 import ArrowTitle from "../../assets/ArrowTitle.png";
+import { useState } from "react";
+import { Modal } from "components/Modal";
 
 export const DesktopTutorial = () => {
+  const [modalAccess, setModalAccess] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -37,7 +40,6 @@ export const DesktopTutorial = () => {
     <Container>
       <ContentContainer>
         <HeaderInternal titleBtn={"voltar"} onClick={() => handleClick()} />
-
         <ContainerMid>
           <div style={{ textAlignLast: "center" }}>
             <h1 tabIndex={"0"}>Sobre Computador:</h1>
@@ -53,6 +55,7 @@ export const DesktopTutorial = () => {
               BgColor="var(--white)"
               width="300px"
               hoverColor={"var(--black)"}
+              setModalAccess={setModalAccess}
             />
             <div className="arrowPosition">
               <img
@@ -94,6 +97,7 @@ export const DesktopTutorial = () => {
           />
         </ContainerCards>
       </ContentContainer>
+      {modalAccess && <Modal type="access" setModalAccess={setModalAccess} />}
     </Container>
   );
 };

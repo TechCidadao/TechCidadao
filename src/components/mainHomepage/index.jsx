@@ -38,7 +38,7 @@ export const MainHome = () => {
             />
             <h2 tabIndex={"0"} onClick={() => setModalRegis(true)}>
               O que é Entrar e porque entrar? Aperte nessas letras para saber
-            </h2>
+            </h2>{" "}
           </SectionBtn>
         </ContainerBtn>
       </ContainerMain>
