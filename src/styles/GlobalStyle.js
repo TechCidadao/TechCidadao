@@ -17,6 +17,24 @@ const GlobalStyle = createGlobalStyle`
 
     }
 
+    .backToTop{
+    position: fixed;
+    right: 0px;
+    bottom: 160px;
+    z-index: 2;
+    height: 119px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: var(--green-primary);
+    color: white;
+    width: 88px;
+}
+    
+    
+ button:hover, button:focus, button:active{
+    border: 4px solid var(--black);
+ }
    
 
     :root{
