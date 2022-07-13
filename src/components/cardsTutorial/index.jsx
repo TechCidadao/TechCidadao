@@ -1,6 +1,6 @@
-import { Button } from "components/button";
 import { ContainerCard, ContainerImg } from "./style";
 import { TitleCard, TextCard } from "./style";
+import WhiteIcon from "../../assets/WhiteIcon.svg";
 
 export const CardsTutorial = ({
   photo,
@@ -9,23 +9,27 @@ export const CardsTutorial = ({
   text,
   imgHeight,
   imgWidth,
+  id,
+  onClick,
 }) => {
   return (
     <>
-      <ContainerCard>
+      <ContainerCard id={id}>
         <ContainerImg imgHeight={imgHeight} imgWidth={imgWidth}>
           <img tabIndex={0} src={photo} alt={textAlt} />
         </ContainerImg>
         <TitleCard tabIndex={0}>{title}</TitleCard>
         <TextCard tabIndex={0}>{text}</TextCard>
-        <Button
-          tabIndex={0}
-          title="Aperte aqui!"
-          BgColor="var(--blue-sky)"
-          color="var(--white)"
-          hoverColor={"var(--black)"}
-          width={"90%"}
-        />
+        <button onClick={() => onClick(id)}>
+          <p>
+            Aperte Aqui!
+            <img
+              className="btnMobile"
+              src={WhiteIcon}
+              alt="icone indicando clique"
+            />
+          </p>
+        </button>
       </ContainerCard>
     </>
   );

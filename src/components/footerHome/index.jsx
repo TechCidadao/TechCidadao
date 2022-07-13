@@ -17,7 +17,7 @@ export const Footer = () => {
 
       <DivFooter>
         <HomeHeaderArrowContainer
-          BgColor="var(--blue-marine)"
+          BgColor="transparent"
           transitionColor="var(--blue-marine)"
           shape="rotate(0deg)"
           style={{
