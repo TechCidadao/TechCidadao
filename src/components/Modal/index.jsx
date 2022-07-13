@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { AccessButtons } from "./AccessButtons";
 import { LoginForm } from "./LoginForm";
-import { ModalLoginTutotial } from "./LoginTutorial";
+import { ModalLoginTutorial } from "./LoginTutorial";
 import { RegistrationForm } from "./RegistrationForm";
 import { RegistrationTutorial } from "./RegistrationTutorial";
 import { BodyModal, CloseModal, HeadModal, HeadText, ModalBg } from "./style";
@@ -14,7 +14,6 @@ export const Modal = ({
   setModalAccess,
   setModalRegis,
   setModalLogin,
-  height,
 }) => {
   const [selectType, setSelectType] = useState(type);
   function closeModal() {
@@ -37,7 +36,7 @@ export const Modal = ({
   function modalType(type) {
     switch (type) {
       case "loginTutorial":
-        return <ModalLoginTutotial />;
+        return <ModalLoginTutorial />;
       case "loginForm":
         return <LoginForm />;
       case "registration":

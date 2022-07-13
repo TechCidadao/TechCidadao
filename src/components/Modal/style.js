@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ModalBg = styled.div`
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   padding: 10%;
   background-color: rgba(0, 0, 0, 0.85);
   z-index: 200;
@@ -39,19 +39,17 @@ export const HeadModal = styled.div`
 
 export const BodyModal = styled.div`
   width: 100%;
-  height: 100%;
-  min-height: 300px;
+  min-height: 95vh;
   padding: 5%;
-
   background-color: var(--background-input);
   display: flex;
   align-items: center;
 
   @media (min-width: 600px) {
-    min-height: 260px;
+    min-height: 90vh;
   }
   @media (min-width: 1024px) {
-    min-height: 380px;
+    min-height: 90vh;
   }
 `;
 
@@ -108,7 +106,6 @@ export const Tutorial = styled.div`
   width: 100%;
   height: 100%;
   padding: 5%;
-
   background-color: var(--primary-background);
   border-radius: 5px;
 `;
@@ -127,15 +124,59 @@ export const FlexBox = styled.div`
   height: 100%;
   min-height: 200px;
   margin-top: 5%;
-
   display: flex;
   flex-direction: column;
-  justify-content: center;
-
   gap: 5px;
-
+  label {
+    display: flex;
+    align-self: flex-start;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 35px;
+  }
+  p {
+    display: flex;
+    align-self: flex-start;
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+    margin-left: 35px;
+  }
   @media (min-width: 600px) {
     min-height: 260px;
+  }
+  @media (min-width: 1024px) {
+    min-height: 380px;
+  }
+`;
+
+export const Container = styled.div`
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  label {
+    display: flex;
+    align-self: flex-start;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 35px;
+  }
+  p {
+    display: flex;
+    align-self: flex-start;
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+    margin-left: 35px;
+  }
+  @media (min-width: 600px) {
+    min-height: 260px;
+    justify-content: space-evenly;
   }
   @media (min-width: 1024px) {
     min-height: 380px;
@@ -153,7 +194,16 @@ export const StyledForm = styled.form`
   align-items: center;
   gap: 2%;
 `;
-
+export const StyledFormLogin = styled.form`
+  width: 100%;
+  height: 90%;
+  padding: 2.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2%;
+`;
 export const ThemeButton = styled.button`
   width: 98%;
   height: 58px;
@@ -162,4 +212,16 @@ export const ThemeButton = styled.button`
   border-radius: 5px;
   color: white;
   font-weight: 500;
+`;
+
+export const ButtonAcess = styled.button`
+  width: 98%;
+  height: 90px;
+  background-color: var(--primary-background);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 15px;
 `;

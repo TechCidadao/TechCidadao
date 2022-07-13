@@ -1,6 +1,6 @@
 import { Tutorial, HeadText } from "../style";
 
-export const ModalLoginTutotial = () => {
+export const ModalLoginTutorial = () => {
   return (
     <Tutorial>
       <HeadText>
