@@ -51,7 +51,11 @@ export const MainHome = () => {
         />
       )}
       {modalLoginForm && (
-        <Modal type="loginForm" setModalLoginForm={setModalLoginForm} />
+        <Modal
+          desktopHeight={"70vh"}
+          type="loginForm"
+          setModalLoginForm={setModalLoginForm}
+        />
       )}
       {modalRegis && (
         <Modal type="registration" setModalRegis={setModalRegis} />
