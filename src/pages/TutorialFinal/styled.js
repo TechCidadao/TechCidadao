@@ -6,11 +6,6 @@ export const Container = styled.div`
   height: 100%;
   background-color: #364462;
 
-  video {
-    width: 100%;
-    height: 100%;
-  }
-
   .container-video {
     margin-bottom: 20px;
   }

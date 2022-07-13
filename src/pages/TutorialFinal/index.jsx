@@ -71,20 +71,27 @@ export const PageTutorial = () => {
 
         <div className="main">
           <div className="container-video">
-            <div className="div-video">
-              {link.includes("youtube") ? (
-                <>
-                  <video controls />
-                  <embed src={link} />
-                </>
-              ) : (
+            {link.includes("youtube") ? (
+              <div className="div-video" style={{ height: "50vh" }}>
+                <iframe
+                  width={"100%"}
+                  height={"100%"}
+                  src={link}
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            ) : (
+              <div className="div-video">
                 <img
                   className="imgContent"
                   src={link}
                   alt={"imagem relacionada ao conteudo"}
                 />
-              )}
-            </div>
+              </div>
+            )}
             <div className="div-text">
               <p className="description-text">{description}</p>
             </div>
