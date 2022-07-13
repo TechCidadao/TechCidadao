@@ -17,12 +17,25 @@ import IconSocialMedia from "../../assets/iconSocialMedia.png";
 import IconPeople from "../../assets/iconMySpace.png";
 import ArrowTitle from "../../assets/ArrowTitle.png";
 import IconCell from "../../assets/iconCell.png";
+import TechCidadaoAPI from "services/api";
+import { useUserInfo } from "providers/userInfo";
+import { useContentInfo } from "providers/content";
+
+import { toast } from "react-toastify";
 
 export const MobileTutorial = () => {
   const navigate = useNavigate();
+  const { token } = useUserInfo();
+  const { getCurrentContent } = useContentInfo();
 
   useEffect(() => {
     document.addEventListener("keydown", detectKeyDown, true);
+  });
+
+  useEffect(() => {
+    if (token === "") {
+      return navigate("/notFound");
+    }
   });
 
   const detectKeyDown = (e) => {
@@ -31,9 +44,24 @@ export const MobileTutorial = () => {
     }
   };
 
-  const handleClick = () =>{
-    navigate("/dashboard")
-  }
+  const handleClick = () => {
+    navigate("/dashboard");
+  };
+
+  const GetContent = (id) => {
+    TechCidadaoAPI.get(`/contentMobile/${id}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .then((res) => {
+        getCurrentContent(res.data);
+        if (res.data) {
+          navigate(`/dashboard/mobile/tutorial/${id}`);
+        }
+      })
+      .catch((error) =>
+        toast.error("Algo está errado, tente novamente mais tarde")
+      );
+  };
 
   return (
     <Container>
@@ -72,6 +100,7 @@ export const MobileTutorial = () => {
 
         <ContainerCards>
           <CardsTutorial
+            id={"1"}
             imgHeight={"115px"}
             imgWidth={"120px"}
             photo={IconCell}
@@ -80,8 +109,10 @@ export const MobileTutorial = () => {
             text={
               "Aqui você vai aprender os primeiros passos para mexer no seu celular!"
             }
+            onClick={GetContent}
           />
           <CardsTutorial
+            id={"2"}
             imgHeight={"75px"}
             imgWidth={"255px"}
             photo={IconSocialMedia}
@@ -90,14 +121,17 @@ export const MobileTutorial = () => {
             }
             title={"Ícones: O que são?"}
             text={"O que são ícones? Como identificá-los? Para que servem?"}
+            onClick={GetContent}
           />
           <CardsTutorial
+            id={"3"}
             imgHeight={"135px"}
             imgWidth={"160px"}
             photo={IconPeople}
             textAlt={"Imagem ilustrativa três pessoas enfileiradas"}
             title={"Mais Sobre: Cadastros e Login"}
             text={"Como preencher? Para que servem? O que são?"}
+            onClick={GetContent}
           />
         </ContainerCards>
       </ContentContainer>
