@@ -41,10 +41,7 @@ export const HeaderHome = () => {
           <div className="arrowPosition">
             <p>
               <small tabIndex={"0"}>
-              Aperte aqui
-              <br />
-              para escolher <br />
-              sua necessidade
+                Aperte aqui para escolher sua necessidade
               </small>
             </p>
             <img

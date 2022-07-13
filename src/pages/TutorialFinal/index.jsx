@@ -10,8 +10,11 @@ import { useEffect } from "react";
 import { useContentInfo } from "providers/content";
 import { useUserInfo } from "providers/userInfo";
 import { Button } from "components/button";
+import { useState } from "react";
+import { Modal } from "components/Modal";
 
 export const PageTutorial = () => {
+  const [modalAccess, setModalAccess] = useState(false);
   const { currentContent } = useContentInfo();
   const { title, description, link, extra } = currentContent;
   const { token } = useUserInfo();
@@ -50,6 +53,7 @@ export const PageTutorial = () => {
               BgColor="var(--white)"
               width="300px"
               hoverColor={"var(--black)"}
+              setModalAccess={setModalAccess}
             />
             <div className="arrowPosition">
               <img
@@ -119,6 +123,7 @@ export const PageTutorial = () => {
         >
           Voltar ao Topo
         </button>
+        {modalAccess && <Modal type="access" setModalAccess={setModalAccess} />}
       </Container>
     </>
   );

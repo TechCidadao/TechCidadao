@@ -14,6 +14,7 @@ export const Modal = ({
   setModalAccess,
   setModalRegis,
   setModalLogin,
+  height,
 }) => {
   const [selectType, setSelectType] = useState(type);
   function closeModal() {

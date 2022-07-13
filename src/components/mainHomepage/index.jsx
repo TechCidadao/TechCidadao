@@ -22,10 +22,10 @@ export const MainHome = () => {
               hoverColor={"var(--black)"}
               setModalRegisForm={setModalRegisForm}
             />
-            <h2 tabIndex={"0"} onClick={() => setModalRegis(true)}>
+            <button className="tutorialBtn" onClick={() => setModalRegis(true)}>
               O que é Cadastro e porque cadastrar? Aperte nessas letras para
               saber
-            </h2>
+            </button>
           </SectionBtn>
           <SectionBtn>
             <Button
@@ -36,9 +36,9 @@ export const MainHome = () => {
               hoverColor={"var(--black)"}
               setModalLoginForm={setModalLoginForm}
             />
-            <h2 tabIndex={"0"} onClick={() => setModalLogin(true)}>
+            <button className="tutorialBtn" onClick={() => setModalLogin(true)}>
               O que é Entrar e porque entrar? Aperte nessas letras para saber
-            </h2>{" "}
+            </button>
           </SectionBtn>
         </ContainerBtn>
       </ContainerMain>

@@ -18,7 +18,8 @@ export const HomeHeaderBox = styled.section`
   }
 
   p {
-  text-align: start;
+    text-align: start;
+    width: 40%;
   }
 
   @media (min-width: 1024px) {
@@ -29,7 +30,7 @@ export const HomeHeaderBox = styled.section`
 
     section {
       padding: 10px;
-      width: 50%;
+      width: 30%;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -49,6 +50,7 @@ export const ContainerArrow = styled.section`
   .arrowPosition {
     display: flex;
     align-items: flex-start;
+    justify-content: center;
 
     img {
       width: 80px;
@@ -90,7 +92,9 @@ export const MidArrowContainer = styled.section.attrs((props) => ({
   background-color: ${(props) => props.BgColor};
   padding: 10px;
 
-  h1, h3, p {
+  h1,
+  h3,
+  p {
     margin: 0;
     font-size: 15px;
     color: white;
@@ -99,7 +103,9 @@ export const MidArrowContainer = styled.section.attrs((props) => ({
   }
 
   @media (min-width: 600px) {
-    h1, h3, p  {
+    h1,
+    h3,
+    p {
       font-size: 30px;
       width: 90%;
       padding: 0px 10px 0px 10px;
