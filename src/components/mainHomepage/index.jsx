@@ -15,19 +15,6 @@ export const MainHome = () => {
         <ContainerBtn>
           <SectionBtn>
             <Button
-              title="Entrar"
-              BgColor="var(--blue-sky)"
-              color="var(--white)"
-              width="300px"
-              hoverColor={"var(--black)"}
-              setModalLoginForm={setModalLoginForm}
-            />
-            <h1 tabIndex={"0"} onClick={() => setModalLogin(true)}>
-              O que é Entrar e porque entrar? Aperte nessas letras para saber
-            </h1>
-          </SectionBtn>
-          <SectionBtn>
-            <Button
               title="Cadastre-se"
               BgColor="var(--blue-sky)"
               color="var(--white)"
@@ -35,10 +22,23 @@ export const MainHome = () => {
               hoverColor={"var(--black)"}
               setModalRegisForm={setModalRegisForm}
             />
-            <h1 tabIndex={"0"} onClick={() => setModalRegis(true)}>
+            <h2 tabIndex={"0"} onClick={() => setModalLogin(true)}>
               O que é Cadastro e porque cadastrar? Aperte nessas letras para
               saber
-            </h1>
+            </h2>
+          </SectionBtn>
+          <SectionBtn>
+            <Button
+              title="Entrar"
+              BgColor="var(--blue-sky)"
+              color="var(--white)"
+              width="300px"
+              hoverColor={"var(--black)"}
+              setModalLoginForm={setModalLoginForm}
+            />
+            <h2 tabIndex={"0"} onClick={() => setModalRegis(true)}>
+              O que é Entrar e porque entrar? Aperte nessas letras para saber
+            </h2>{" "}
           </SectionBtn>
         </ContainerBtn>
       </ContainerMain>

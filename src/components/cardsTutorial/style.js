@@ -5,7 +5,7 @@ export const Container = styled.div`
   justify-content: space-around;
   align-items: center;
 `;
-export const ContainerCard = styled.div`
+export const ContainerCard = styled.section`
   width: 280px;
   height: 365px;
   background-color: var(--white);
@@ -82,3 +82,8 @@ export const TextCard = styled.div`
   padding: 0px 10px;
   letter-spacing: 1px;
 `;
+export const DescriptionButton = styled.p`
+  small{
+    font-size: 10px;
+  }
+`
