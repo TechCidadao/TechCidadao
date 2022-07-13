@@ -22,7 +22,7 @@ export const MainHome = () => {
               hoverColor={"var(--black)"}
               setModalRegisForm={setModalRegisForm}
             />
-            <h2 tabIndex={"0"} onClick={() => setModalLogin(true)}>
+            <h2 tabIndex={"0"} onClick={() => setModalRegis(true)}>
               O que é Cadastro e porque cadastrar? Aperte nessas letras para
               saber
             </h2>
@@ -36,7 +36,7 @@ export const MainHome = () => {
               hoverColor={"var(--black)"}
               setModalLoginForm={setModalLoginForm}
             />
-            <h2 tabIndex={"0"} onClick={() => setModalRegis(true)}>
+            <h2 tabIndex={"0"} onClick={() => setModalLogin(true)}>
               O que é Entrar e porque entrar? Aperte nessas letras para saber
             </h2>{" "}
           </SectionBtn>
