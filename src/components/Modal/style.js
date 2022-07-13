@@ -195,10 +195,9 @@ export const Container = styled.div`
 export const StyledForm = styled.form`
   width: 90%;
   height: 100%;
-
+  gap: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
 `;
 export const StyledFormLogin = styled.form`
@@ -208,9 +207,8 @@ export const StyledFormLogin = styled.form`
   display: flex;
   align-content: center;
   align-items: center;
-
+  gap: 10px;
   flex-direction: column;
-  justify-content: space-evenly;
 `;
 export const ThemeButton = styled.button`
   width: 90%;
