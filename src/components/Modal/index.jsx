@@ -14,6 +14,8 @@ export const Modal = ({
   setModalAccess,
   setModalRegis,
   setModalLogin,
+  mobileHeight,
+  desktopHeight,
 }) => {
   const [selectType, setSelectType] = useState(type);
   function closeModal() {
@@ -52,12 +54,16 @@ export const Modal = ({
     }
   }
   return (
-    <ModalBg>
-      <HeadModal>
-        <HeadText>Aperte no X para fechar →</HeadText>
-        <CloseModal onClick={() => closeModal()}>X</CloseModal>
-      </HeadModal>
-      <BodyModal>{modalType(selectType)}</BodyModal>
-    </ModalBg>
+    <div>
+      <ModalBg>
+        <HeadModal>
+          <HeadText>Aperte no X para fechar →</HeadText>
+          <CloseModal onClick={() => closeModal()}>X</CloseModal>
+        </HeadModal>
+        <BodyModal mobileHeight={mobileHeight} desktopHeight={desktopHeight}>
+          {modalType(selectType)}
+        </BodyModal>
+      </ModalBg>
+    </div>
   );
 };

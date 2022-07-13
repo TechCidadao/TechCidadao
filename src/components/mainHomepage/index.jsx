@@ -43,7 +43,12 @@ export const MainHome = () => {
         </ContainerBtn>
       </ContainerMain>
       {modalRegisForm && (
-        <Modal type="registrarionForm" setModalRegisForm={setModalRegisForm} />
+        <Modal
+          desktopHeight={"95vh"}
+          mobileHeight={"80vh"}
+          type="registrarionForm"
+          setModalRegisForm={setModalRegisForm}
+        />
       )}
       {modalLoginForm && (
         <Modal type="loginForm" setModalLoginForm={setModalLoginForm} />

@@ -1,12 +1,10 @@
 import styled from "styled-components";
 
 export const ModalBg = styled.div`
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
-  padding: 10%;
   background-color: rgba(0, 0, 0, 0.85);
-  z-index: 200;
-
+  z-index: 10000;
   position: fixed;
   left: 0;
   top: 0;
@@ -19,37 +17,40 @@ export const ModalBg = styled.div`
   justify-content: center;
 
   @media (min-width: 600px) {
-    padding: 15%;
-  }
-  @media (min-width: 1024px) {
-    padding: 25%;
+    padding: 0 15%;
   }
 `;
 
 export const HeadModal = styled.div`
-  width: 100%;
+  width: 90%;
   height: 58px;
   padding: 0 2.5%;
-
+  margin-top: 23px;
   background-color: var(--primary-background);
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (min-width: 1024px) {
+    width: 60%;
+  }
 `;
 
-export const BodyModal = styled.div`
-  width: 100%;
-  min-height: 95vh;
-  padding: 5%;
+export const BodyModal = styled.div.attrs((props) => ({
+  desktopHeight: props.desktopHeight,
+  mobileHeight: props.mobileHeight,
+}))`
+  width: 90%;
+  min-height: ${(props) => props.desktopHeight};
+  padding: 5% 0%;
   background-color: var(--background-input);
   display: flex;
   align-items: center;
 
-  @media (min-width: 600px) {
-    min-height: 90vh;
-  }
   @media (min-width: 1024px) {
-    min-height: 90vh;
+    min-height: ${(props) => props.desktopHeight};
+    width: 60%;
+    padding: 10px;
   }
 `;
 
@@ -65,15 +66,16 @@ export const HeadText = styled.span`
     font-weight: 600;
   }
   @media (min-width: 1024px) {
-    font-size: 24px;
+    font-size: 18px;
   }
 `;
 
 export const ThemeText = styled.span`
   font-size: 12px;
   font-weight: 600;
-  line-height: 16px;
+  line-height: 27px;
   text-align: center;
+  padding: 5px;
 
   @media (min-width: 600px) {
     font-size: 18px;
@@ -123,10 +125,12 @@ export const FlexBox = styled.div`
   width: 100%;
   height: 100%;
   min-height: 200px;
-  margin-top: 5%;
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+
+  align-items: center;
+
   label {
     display: flex;
     align-self: flex-start;
@@ -135,15 +139,19 @@ export const FlexBox = styled.div`
     margin-left: 35px;
   }
   p {
+    font-size: 12px;
     display: flex;
     align-self: flex-start;
-    font-size: 18px;
     font-weight: bold;
     color: red;
     margin-left: 35px;
   }
   @media (min-width: 600px) {
     min-height: 260px;
+
+    p {
+      font-size: 18px;
+    }
   }
   @media (min-width: 1024px) {
     min-height: 380px;
@@ -159,6 +167,7 @@ export const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   gap: 5px;
+  align-items: center;
   label {
     display: flex;
     align-self: flex-start;
@@ -184,34 +193,35 @@ export const Container = styled.div`
 `;
 
 export const StyledForm = styled.form`
-  width: 100%;
-  height: 90%;
-  padding: 2.5%;
+  width: 90%;
+  height: 100%;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 2%;
 `;
 export const StyledFormLogin = styled.form`
-  width: 100%;
+  width: 90%;
   height: 90%;
-  padding: 2.5%;
+  text-align-last: center;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-content: center;
   align-items: center;
-  gap: 2%;
+
+  flex-direction: column;
+  justify-content: space-evenly;
 `;
 export const ThemeButton = styled.button`
-  width: 98%;
-  height: 58px;
+  width: 90%;
+  height: 75px;
   background-color: var(--primary-background);
   border: none;
   border-radius: 5px;
   color: white;
   font-weight: 500;
+  font-size: 20px;
+  padding: 10px;
 `;
 
 export const ButtonAcess = styled.button`
