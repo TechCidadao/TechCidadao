@@ -4,7 +4,7 @@ export const ModalBg = styled.div`
   width: 100%;
   min-height: 100vh;
   background-color: rgba(0, 0, 0, 0.85);
-  z-index: 10000;
+  z-index: 200;
   position: fixed;
   left: 0;
   top: 0;
